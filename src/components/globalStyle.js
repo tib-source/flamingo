@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { Color } from "../data/Color";
 export const GlobalStyle = createGlobalStyle`
 
 *{
@@ -13,5 +13,6 @@ body, html{
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
   box-sizing: inherit;
+  background-color: ${Color.black};
 }
 `;
