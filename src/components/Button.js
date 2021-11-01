@@ -4,8 +4,8 @@ import { Color } from "../data/Color";
 export const Button = styled(Link)`
   padding: 0.5rem 1rem;
   background-color: ${({ reverse }) =>
-    reverse == true ? Color.black : Color.green};
-  color: ${({ reverse }) => (reverse == true ? Color.orange : Color.white)};
+    reverse === true ? Color.black : Color.green};
+  color: ${({ reverse }) => (reverse === true ? Color.orange : Color.white)};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,8 +20,8 @@ export const Button = styled(Link)`
 
   &:hover {
     /* transform: translateY(-3px); */
-    color: ${({ reverse }) => (reverse == false ? Color.orange : Color.white)};
+    color: ${({ reverse }) => (reverse === false ? Color.orange : Color.white)};
     background-color: ${({ reverse }) =>
-      reverse == false ? Color.black : Color.green};
+      reverse === false ? Color.black : Color.green};
   }
 `;
