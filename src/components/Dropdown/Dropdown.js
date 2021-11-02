@@ -5,13 +5,15 @@ import { Color } from "../../data/Color";
 import { Button } from "../Button";
 import { FaTimes } from "react-icons/fa";
 import { NavLink } from "./../Header/HeaderStyle";
+
+
 const DropdownWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: ${Color.black};
+  background: ${Color.white};
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -31,7 +33,9 @@ const DropdownMenu = styled.div`
 `;
 const DropdownLinks = styled(Link)`
   ${NavLink}
+  color: ${Color.black};
   font-size: 1.5rem;
+  font-weight: 500;
 `;
 const DropdownButtons = styled.div`
   display: flex;
@@ -50,8 +54,8 @@ const DropdownContent = styled.div`
 
 export const Icon = styled.div`
   position: absolute;
-  top: 2rem;
-  right: 2.4rem;
+  top: 3rem;
+  right: 3.4rem;
   font-size: 1.6rem;
   text-decoration: none;
   display: flex;
@@ -79,7 +83,7 @@ export const Icon = styled.div`
 const Dropdown = (props) => {
   return (
     <DropdownWrapper>
-      <Icon>
+      <Icon onClick={props.toggle}>
         <FaTimes />
       </Icon>
       <DropdownMenu>

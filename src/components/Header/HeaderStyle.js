@@ -21,7 +21,7 @@ export const Icon = styled(Link)`
   flex-direction: column;
   font-style: italic;
   color: ${Color.orange};
-  z-index: 15;
+  z-index: 1000;
   user-select: none;
   cursor: pointer;
 

@@ -10,7 +10,7 @@ const Header = (props) => {
         <h2>FLAMINGO</h2>
         <small>Shepherd Bush</small>
       </S.Icon>
-      <S.Hamburger>
+      <S.Hamburger onClick={props.toggle}>
         <FaBars />
       </S.Hamburger>
       <S.HeaderContent>
