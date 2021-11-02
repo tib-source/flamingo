@@ -11,12 +11,14 @@ const Header = (props) => {
       </S.Icon>
       <S.HeaderContent>
         {props.HeaderData.map((elem, indx) => (
-          <S.HeaderLinks to={elem.link}>{elem.title}</S.HeaderLinks>
+          <S.HeaderLinks key={indx} to={elem.link}>
+            {elem.title}
+          </S.HeaderLinks>
         ))}
       </S.HeaderContent>
       <S.HeaderButtons>
         {props.HeaderButtonData.map((elem, indx) => (
-          <Button reverse={elem.reverse} to={elem.link}>
+          <Button key={indx} reverse={elem.reverse} to={elem.link}>
             {elem.title}
           </Button>
         ))}

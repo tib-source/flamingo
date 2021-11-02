@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  z-index: 15;
 `;
 
 export const Icon = styled.div`
@@ -17,6 +18,8 @@ export const Icon = styled.div`
   flex-direction: column;
   font-style: italic;
   color: ${Color.orange};
+  z-index: 15;
+
   h2 {
     margin: 0;
     padding: 0;
@@ -34,6 +37,7 @@ export const NavLink = css`
   font-size: 1rem;
   text-decoration: none;
   transition: 0.2s ease-in-out;
+  z-index: 15;
 
   &:hover {
     color: ${Color.orange};
@@ -50,4 +54,5 @@ export const HeaderLinks = styled(Link)`
 export const HeaderButtons = styled.div`
   display: flex;
   gap: 1rem;
+  z-index: 15;
 `;
