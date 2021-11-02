@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Button";
 import { FaTimes } from "react-icons/fa";
 import { NavLink } from "./../Header/HeaderStyle";
 
-
+const fadeInMenu = keyframes`
+  from{
+    transform: translateX(25px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+`;
 const DropdownWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -18,6 +25,7 @@ const DropdownWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: ${fadeInMenu} 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
 const DropdownMenu = styled.div`
   width: 80%;
