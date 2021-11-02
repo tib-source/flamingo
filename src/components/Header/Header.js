@@ -1,14 +1,18 @@
 import React from "react";
 import { Button } from "../Button";
 import * as S from "./HeaderStyle";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = (props) => {
   return (
     <S.HeaderWrapper>
-      <S.Icon>
+      <S.Icon to="/">
         <h2>FLAMINGO</h2>
-        <small>Shepher Bush</small>
+        <small>Shepherd Bush</small>
       </S.Icon>
+      <S.Hamburger>
+        <FaBars />
+      </S.Hamburger>
       <S.HeaderContent>
         {props.HeaderData.map((elem, indx) => (
           <S.HeaderLinks key={indx} to={elem.link}>

@@ -9,7 +9,7 @@ export const HeaderData = [
   },
   {
     title: "Our Menu",
-    link: "/about",
+    link: "/menu",
   },
   {
     title: "Gallery",

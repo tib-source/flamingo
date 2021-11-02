@@ -1,17 +1,20 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { Color } from "../../data/Color";
-
+import { FaBars, FaTimes } from "react-icons/fa";
 export const HeaderWrapper = styled.div`
-  padding: 2rem 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 85%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 2rem 0;
   z-index: 15;
 `;
 
-export const Icon = styled.div`
+export const Icon = styled(Link)`
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -19,6 +22,8 @@ export const Icon = styled.div`
   font-style: italic;
   color: ${Color.orange};
   z-index: 15;
+  user-select: none;
+  cursor: pointer;
 
   h2 {
     margin: 0;
@@ -46,6 +51,10 @@ export const NavLink = css`
 export const HeaderContent = styled.div`
   display: flex;
   gap: 2rem;
+
+  @media screen and (max-width: 914px) {
+    display: none;
+  }
 `;
 export const HeaderLinks = styled(Link)`
   ${NavLink}
@@ -55,4 +64,23 @@ export const HeaderButtons = styled.div`
   display: flex;
   gap: 1rem;
   z-index: 15;
+
+  @media screen and (max-width: 914px) {
+    display: none;
+  }
 `;
+
+export const Hamburger = styled.div`
+  color: ${Color.white};
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 15;
+  display: none;
+
+  @media screen and (max-width: 914px) {
+    display: block;
+    font-size: 1.5rem;
+  }
+`;
+

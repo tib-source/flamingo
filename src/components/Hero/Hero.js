@@ -6,22 +6,25 @@ const Hero = ({ SliderData }) => {
   return (
     <HeroContainer>
       <HeroWrapper>
-        {SliderData.map((elem, indx) => (
-          <HeroContent key={indx}>
-            <Text>
-              <h2>{elem.title}</h2>
-              <p>{elem.paragraph}</p>
-            </Text>
-            <img src={elem.image} alt="home" />
-          </HeroContent>
-        ))}
+        <HeroContent></HeroContent>
       </HeroWrapper>
     </HeroContainer>
   );
 };
-const Text = styled.div``;
+const Text = styled.div`
+  font-weight: 700;
+  color: ${Color.white};
+
+  span {
+    color: ${Color.red};
+  }
+`;
 
 const HeroContent = styled.div`
+  width: 1000px;
+  max-width: 90vw;
+  height: 600px;
+  background: ${Color.orange};
   img {
     width: 100%;
     height: 100%;
@@ -29,15 +32,24 @@ const HeroContent = styled.div`
   }
 `;
 const HeroContainer = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const HeroWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   z-index: 1;
-  background-color: ${Color.red};
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in;
+  gap: 1rem;
 `;
 export default Hero;

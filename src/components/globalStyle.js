@@ -11,7 +11,7 @@ body, html{
   padding: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  overflow: auto;
   box-sizing: inherit;
   background-color: ${Color.black};
 }
