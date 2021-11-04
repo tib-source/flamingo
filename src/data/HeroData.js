@@ -1,10 +1,10 @@
 import ImageOne from "./../images/Injera-1.jpg";
-
 export const HeroData = {
-  title: "True Favour",
+  title: "Demo for Nati",
   paragraph: "Exprience authentic Ethiopian cuisine",
   button: true,
   buttonLabel: "View Our Menu",
   buttonPath: "/menu",
   image: ImageOne,
+  background: ImageOne,
 };

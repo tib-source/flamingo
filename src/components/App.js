@@ -6,6 +6,7 @@ import Hero from "./Hero/Hero";
 import { SliderData } from "../data/SliderData";
 import Dropdown from "./Dropdown/Dropdown";
 import { useState } from "react";
+import InfoSection from "./InfoSection/InfoSection";
 
 function App() {
   const [IsOpen, setIsOpen] = useState(false);
@@ -29,6 +30,7 @@ function App() {
         />
       )}
       <Hero SliderData={SliderData} />
+      <InfoSection />
     </Router>
   );
 }
