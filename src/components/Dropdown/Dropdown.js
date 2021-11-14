@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { Color } from "../../data/Color";
-import { Button } from "../Button";
+import { Button } from "../Util/Button";
 import { FaTimes } from "react-icons/fa";
 import { NavLink } from "./../Header/HeaderStyle";
 

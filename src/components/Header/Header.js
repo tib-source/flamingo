@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button";
+import { Button } from "../Util/Button";
 import * as S from "./HeaderStyle";
 import { FaBars, FaTimes } from "react-icons/fa";
 

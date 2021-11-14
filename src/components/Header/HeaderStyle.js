@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { Color } from "../../data/Color";
-import { FaBars, FaTimes } from "react-icons/fa";
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -83,4 +82,3 @@ export const Hamburger = styled.div`
     font-size: 1.5rem;
   }
 `;
-

@@ -1,106 +1,88 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Color } from "../../data/Color";
-import { HeroData } from "../../data/HeroData";
-import { Button } from "../Button";
-const Hero = ({ SliderData }) => {
-  console.log(SliderData);
-  return (
-    <HeroContainer>
-      <HeroWrapper>
-        <HeroContent>
-          <Text>
-            <h1>{HeroData.title}</h1>
-            <span>{HeroData.paragraph}</span>
-            <Button reverse={false} to={HeroData.buttonPath}>
-              {HeroData.buttonLabel}
-            </Button>
-          </Text>
-          <Image>
-            <img src={HeroData.image} alt="injera" />
-          </Image>
-        </HeroContent>
-      </HeroWrapper>
-    </HeroContainer>
-  );
-};
-const Text = styled.div`
-  justify-self: flex-start;
-  z-index: 2;
-  color: ${Color.white};
-  display: grid;
-  justify-content: center;
-  place-items: start;
+import { Button } from "../Util/Button";
+import { flex } from "../Util/flex";
+import Background from "./../../images/background.jpg";
 
-  h1 {
-    font-size: clamp(2rem, 8vw, 5rem);
-    padding: 0px;
-    margin: 0px;
-    border: 0;
-    font-weight: 700;
-  }
-  span {
-    font-size: clamp(1rem, 4vw, 2rem);
-    margin: 0 0 1rem 0;
-    color: ${Color.red};
-  }
-  .Button {
-    background: red;
-  }
+const HeroContainer = styled.section`
+  width: 100%;
+  height: 100vh;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(${Background}) center no-repeat;
+  background-size: cover;
+  z-index: 1;
+  display: block;
 `;
 
-const Image = styled.div`
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    z-index: 999;
-    background: linear-gradient(0deg, ${Color.black} 0%, ${Color.white} 100%);
-    opacity: 0.2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-  }
-`;
-
-const HeroContent = styled.div`
-  width: 1500px;
-  max-width: 90vw;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    gap: 2rem;
-  } ;
-`;
-const HeroContainer = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 
-const HeroWrapper = styled.div`
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s ease-in;
-  gap: 1rem;
-  padding: 7rem 0;
+const Content = styled(flex)`
+  flex-direction: column;
+  border: 3px solid ${Color.trueWhite};
+  backdrop-filter: brightness(0.7) blur(3px);
+  padding: 5rem;
+  gap: 2rem;
+  h1 {
+    font-size: 5rem;
+    color: ${Color.black};
+    padding: 0;
+    margin: 0;
+    filter: drop-shadow(3px 3px 0.5px ${Color.orange});
+    font-style: italic;
+  }
+  small {
+    font-size: 1.25rem;
+    padding: 0;
+    margin: 0;
+    color: ${Color.white};
+    font-weight: 700;
+    filter: drop-shadow(2px 2px 0.5px ${Color.black});
+  }
+  span {
+    color: ${Color.orange};
+  }
 `;
+
+const CTAButtons = styled(flex)`
+  gap: 1rem;
+`;
+
+const Text = styled(flex)`
+  flex-direction: column;
+`;
+const Hero = () => {
+  return (
+    <HeroContainer>
+      <Wrapper>
+        <Content>
+          <Text>
+            <h1>Flamingo Restaurant</h1>
+            <small>
+              Experience <span>Authentic</span> Ethiopian cuisine
+            </small>
+          </Text>
+          <CTAButtons>
+            <Button to="/" big>
+              Menu
+            </Button>
+            <Button to="/" big>
+              Book A Table
+            </Button>
+          </CTAButtons>
+        </Content>
+      </Wrapper>
+    </HeroContainer>
+  );
+};
+
 export default Hero;

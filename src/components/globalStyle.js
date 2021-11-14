@@ -13,6 +13,5 @@ body, html{
   font-family: 'Poppins', sans-serif;
   overflow: auto;
   box-sizing: inherit;
-  background-color: ${Color.black};
-}
+ }
 `;
