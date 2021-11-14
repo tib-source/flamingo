@@ -1,13 +1,11 @@
 export const Color = {
   black: "#1B1A17",
   red: "#EC524B",
-  green: "#9AD3BC",
-  orange: "#FF8303",
-  white: "#F0E3CA",
-  trueWhite: '#ffffff'
+  green: "#219ebc",
+  orange: "#fb8500",
+  white: "#fefae0",
+  trueWhite: "#ffffff",
 };
-
-
 
 // Original Color Palette
 // export const Color = {
@@ -17,8 +15,6 @@ export const Color = {
 //   orange: "#F3B404",
 //   white: "#ffffff",
 // };
-
-
 
 // Secondary - Looks Pretty Good
 // export const Color = {
