@@ -29,8 +29,10 @@ const Wrapper = styled.div`
 const Content = styled(flex)`
   flex-direction: column;
   border: 3px solid ${Color.trueWhite};
-  backdrop-filter: brightness(0.7) blur(3px) sepia(1);
-  padding: 5rem;
+  backdrop-filter: brightness(1) blur(3px) sepia(0.7);
+  width: min(90vw, 1000px);
+  padding: 7rem 0;
+  text-align: center;
   gap: 2rem;
   h1 {
     font-size: 5rem;
