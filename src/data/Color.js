@@ -5,6 +5,8 @@ export const Color = {
   orange: "#fb8500",
   white: "#fefae0",
   trueWhite: "#ffffff",
+  gray: "#e5e5e5",
+  lightBlack: "#1b1a1771",
 };
 
 // Original Color Palette

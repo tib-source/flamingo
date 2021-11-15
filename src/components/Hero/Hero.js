@@ -53,15 +53,16 @@ const Content = styled(flex)`
   text-align: center;
   gap: 2rem;
   h1 {
-    font-size: 5rem;
+    font-size: min(13vw, 5rem);
     color: ${Color.black};
     padding: 0;
     margin: 0;
     filter: drop-shadow(3px 3px 0.5px ${Color.orange});
     font-style: italic;
+    font-weight: 900;
   }
   small {
-    font-size: 1.25rem;
+    font-size: min(3.5vw, 1.25rem);
     padding: 0;
     margin: 0;
     color: ${Color.white};
