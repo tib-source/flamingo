@@ -7,15 +7,33 @@ import Background from "./../../images/background.jpg";
 
 const HeroContainer = styled.section`
   width: 100%;
-  height: 100vh;
-  background: red;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(${Background}) center no-repeat;
-  background-size: cover;
+  height: 90vh;
+  max-height: 1100px;
+  position: relative;
   z-index: 1;
   display: block;
+`;
+
+const BG = styled.div`
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  background: url(${Background}) no-repeat center;
+  width: 100%;
+  height: 100vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, #ffffff2b 0%, #ffffff2b 50%, #000 100%);
+    opacity: 0.6;
+    z-index: 0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -69,6 +87,7 @@ const Text = styled(flex)`
 const Hero = () => {
   return (
     <HeroContainer>
+      <BG></BG>
       <Wrapper>
         <Content>
           <Text>
