@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Header from "./Header/Header";
 import Dropdown from "./Dropdown/Dropdown";
 import { HeaderData, HeaderButtonData } from "../data/HeaderData";
+import Footer from "./Footer/Footer";
 function App() {
   const [IsOpen, setIsOpen] = useState(false);
 
@@ -30,6 +31,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>
+      <Footer HeaderData={HeaderData} />
+
     </Router>
   );
 }

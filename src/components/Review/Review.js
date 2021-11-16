@@ -7,11 +7,11 @@ import { BsStar } from "react-icons/bs";
 import { Color } from "../../data/Color";
 import RangeInput from "./RangeInput";
 const Container = styled(flex)`
-  height: 600px;
+  padding: 2rem;
   background-color: ${({ color }) => (color ? color : Color.red)};
   color: ${({ font }) => (font ? font : Color.black)};
   gap: 2rem;
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     height: auto;
     padding: 2rem 0;
@@ -20,6 +20,9 @@ const Container = styled(flex)`
 const Wrapper = styled(flex)`
   width: min(90 vw, 1100 px);
   gap: 1rem;
+    @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const Left = styled(flex)``;
@@ -29,10 +32,11 @@ const Right = styled.div`
   gap: 1rem;
   padding: 2rem;
   align-items: center;
-  width: 1000px;
+  width: min(90vw, 1000px);
   height: 390px;
   overflow-x: scroll;
-
+    @media screen and (max-width: 900px) {
+  }
   /* width */
   ::-webkit-scrollbar {
     display: none;
@@ -69,6 +73,10 @@ const Stars = styled(flex)`
   border-radius: 2rem;
   gap: 0.5rem;
   font-size: ${(props) => (props.rating ? "1rem" : "1.25rem")};
+
+    @media screen and (max-width: 600px) {
+  padding: ${(props) => (props.rating ? "0rem" : "0.5rem 1.25rem")};
+  }
 `;
 const Group = styled(flex)`
   flex-direction: column;

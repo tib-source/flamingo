@@ -36,6 +36,10 @@ const Top = styled(flex)`
 const Bottom = styled(flex)`
   width: 100%;
   justify-content: space-between;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 const Socials = styled(flex)`
   color: white;
@@ -86,7 +90,9 @@ const Footer = (props) => {
               </HeaderLinks>
             ))}
           </HeaderContent>
-          <Button reverse={true}>Book A Table</Button>
+          <Button reverse={true} to="/book">
+            Book A Table
+          </Button>
         </Bottom>
       </Wrapper>
     </Container>

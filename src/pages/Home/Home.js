@@ -16,7 +16,6 @@ const Home = () => {
         <InfoSection info={info} />
       ))}
       <Review reviews={reviews} />
-      <Footer HeaderData={HeaderData} />
     </div>
   );
 };
