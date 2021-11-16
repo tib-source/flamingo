@@ -10,13 +10,14 @@ const Container = styled(flex)`
   width: 100%;
   background: ${Color.black};
   color: ${Color.orange};
+  flex-direction: column;
 `;
 
 const Wrapper = styled(flex)`
   width: 60%;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
+  padding: 4rem 0rem 1rem;
 `;
 const Top = styled(flex)`
   font-style: italic;
@@ -94,6 +95,7 @@ const Footer = (props) => {
             Book A Table
           </Button>
         </Bottom>
+        Flamingo Inc © 2021 . All rights reserved
       </Wrapper>
     </Container>
   );

@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "../Util/Button";
 import * as S from "./HeaderStyle";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 const Header = (props) => {
+
   return (
     <S.HeaderWrapper>
       <S.Icon to="/">

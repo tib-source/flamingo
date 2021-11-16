@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
@@ -87,7 +87,6 @@ const Text = styled(flex)`
 `;
 const Hero = () => {
   const title = useRef(null)
-  const text = "Flamingo Restaurant"
   return (
     <HeroContainer>
       <BG></BG>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
-import ImageOne from "../../images/background.jpg";
 import { Button } from "../Util/Button";
 import { flex } from "./../Util/flex";
 
@@ -68,8 +67,8 @@ const InfoSection = ({ info }) => {
           data-aos={`fade-${info.reverse === true ? "left" : 'right'}`}>
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
-            {info.paragraphs.map((para) => (
-              <p>{para}</p>
+            {info.paragraphs.map((para, index) => (
+              <p key={index}>{para}</p>
             ))}
             {info.button && (
               <Button to={info.buttonPath}>{info.buttonLabel}</Button>

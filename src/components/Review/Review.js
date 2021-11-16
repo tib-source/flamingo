@@ -143,8 +143,8 @@ const Review = ({ reviews }) => {
     return (
       <Stars rating={rating}>
         <StarGroup>
-          {displayStars(value, rating).map((elem) =>
-            elem ? <Yellow /> : elem === null ? <YellowHalf /> : <BsStar />
+          {displayStars(value, rating).map((elem, index) =>
+            elem ? <Yellow key={index} /> : elem === null ? <YellowHalf key={index} /> : <BsStar key={index} />
           )}
         </StarGroup>
         {rating ? `${value / 10} out of 5` : `${average} out of 5`}
@@ -162,7 +162,6 @@ const Review = ({ reviews }) => {
     if (rating) {
       mean = value / 10;
     }
-    console.log(mean, rating);
     let stars = new Array(5).fill(false);
     for (let i = 0; i <= mean - 1; i++) {
       if (i > mean - 1) {
@@ -201,7 +200,7 @@ const Review = ({ reviews }) => {
         </Left>
         <Right >
           {reviews.map((curr, index) => (
-            <User data-aos="fade-up" data-aos-delay={300 * index} data-offset="1000">
+            <User key={index} data-aos="fade-up" data-aos-delay={300 * index} data-offset="1000">
               <div >
                 {/* <img src={curr.profile} alt="profile" /> */}
                 <p>{curr.title}</p>

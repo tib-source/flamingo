@@ -18,9 +18,10 @@ const DropdownWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: ${Color.white};
+  overflow: hidden;
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -30,6 +31,7 @@ const DropdownWrapper = styled.div`
 const DropdownMenu = styled.div`
   width: 80%;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -58,6 +60,7 @@ const DropdownContent = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const Icon = styled.div`
@@ -89,6 +92,7 @@ export const Icon = styled.div`
 `;
 
 const Dropdown = (props) => {
+  console.log(props)
   return (
     <DropdownWrapper>
       <Icon onClick={props.toggle}>
@@ -97,7 +101,7 @@ const Dropdown = (props) => {
       <DropdownMenu>
         <DropdownContent>
           {props.HeaderData.map((elem, indx) => (
-            <DropdownLinks key={indx} to={elem.link}>
+            <DropdownLinks key={indx} to={elem.link} >
               {elem.title}
             </DropdownLinks>
           ))}

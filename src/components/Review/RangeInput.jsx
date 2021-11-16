@@ -25,7 +25,7 @@ const RangeInput = ({ count, value }) => {
   return (
     <Container width={value}>
       <p>{count} star</p>
-      <div class="progress">
+      <div className="progress">
         <div></div>
       </div>
       <p>{value}%</p>
