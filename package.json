@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^12.8.3",
     "aos": "^2.3.4",
     "web-vitals": "^1.1.2",
-    "react-scripts": "3.0.3"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
