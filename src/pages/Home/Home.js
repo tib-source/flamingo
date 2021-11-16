@@ -5,6 +5,8 @@ import { InfoData } from "../../data/InfoData";
 import Hero from "../../components/Hero/Hero";
 import Review from "../../components/Review/Review";
 import { reviews } from "../../data/reviews";
+import Footer from "../../components/Footer/Footer";
+import { HeaderData } from "../../data/HeaderData";
 
 const Home = () => {
   return (
@@ -14,6 +16,7 @@ const Home = () => {
         <InfoSection info={info} />
       ))}
       <Review reviews={reviews} />
+      <Footer HeaderData={HeaderData} />
     </div>
   );
 };

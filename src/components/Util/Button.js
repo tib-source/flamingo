@@ -4,7 +4,7 @@ import { Color } from "../../data/Color";
 export const Button = styled(Link)`
   padding: 0.5rem 1rem;
   background-color: ${({ reverse }) =>
-    reverse === true ? "transparent" : Color.green};
+    reverse === true ? "transparent" : Color.lightBlack};
   color: ${({ reverse }) =>
     reverse === true ? Color.orange : Color.trueWhite};
   display: flex;
@@ -27,6 +27,6 @@ export const Button = styled(Link)`
         ? Color.orange
         : Color.trueWhite};
     background-color: ${({ reverse }) =>
-      reverse === false || reverse === undefined ? "transparent" : Color.green};
+      reverse === false || reverse === undefined ? Color.black : Color.green};
   }
 `;

@@ -49,6 +49,7 @@ const TextWrapper = styled(flex)`
 
   @media screen and (max-width: 914px) {
     align-items: flex-start;
+    text-align: left;
   }
 `;
 

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { flex } from "../Util/flex";
-import { FaRegStar } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { BsStarFill } from "react-icons/bs";
+import { BsStarHalf } from "react-icons/bs";
+import { BsStar } from "react-icons/bs";
 import { Color } from "../../data/Color";
 import RangeInput from "./RangeInput";
 const Container = styled(flex)`
@@ -62,12 +63,12 @@ const CardCont = styled(flex)`
   gap: 2rem;
 `;
 const Stars = styled(flex)`
-  padding: 0.5rem 1rem;
+  padding: ${(props) => (props.rating ? "0rem" : "1.25rem")};
   margin: 0.25rem;
   background: ${Color.gray};
   border-radius: 2rem;
   gap: 0.5rem;
-  font-size: 1.25rem;
+  font-size: ${(props) => (props.rating ? "1rem" : "1.25rem")};
 `;
 const Group = styled(flex)`
   flex-direction: column;
@@ -77,7 +78,11 @@ const Group = styled(flex)`
   }
 `;
 
-const Yellow = styled(FaStar)`
+const Yellow = styled(BsStarFill)`
+  color: ${Color.orange};
+`;
+
+const YellowHalf = styled(BsStarHalf)`
   color: ${Color.orange};
 `;
 
@@ -99,7 +104,7 @@ const User = styled.div`
     height: 300px;
   }
   a {
-    margin-top: 10px;
+    margin-top: 5px;
     justify-self: flex-end;
     display: block;
     text-decoration: none;
@@ -111,6 +116,7 @@ const User = styled.div`
   }
   p {
     font-weight: 700;
+    margin-bottom: 0;
   }
 `;
 const Review = ({ reviews }) => {
@@ -122,20 +128,40 @@ const Review = ({ reviews }) => {
     let sum = 0;
     reviews.forEach((elem) => (sum += parseInt(elem.rating)));
     const mean = (sum / 10 / reviews.length).toFixed(1);
-    console.log(mean, "mean");
     setAverage(mean);
   }, [reviews, setAverage, setTotal]);
 
+  const reviewStars = (value, rating) => {
+    return (
+      <Stars rating={rating}>
+        <StarGroup>
+          {displayStars(value, rating).map((elem) =>
+            elem ? <Yellow /> : elem === null ? <YellowHalf /> : <BsStar />
+          )}
+        </StarGroup>
+        {rating ? `${value / 10} out of 5` : `${average} out of 5`}
+      </Stars>
+    );
+  };
   function calculateReviewPercentage(rating) {
     return (
       (reviews.filter((review) => review.rating === rating).length / total) *
       100
     ).toFixed(0);
   }
-  function displayStars(average) {
+  function displayStars(value, rating) {
+    let mean = value;
+    if (rating) {
+      mean = value / 10;
+    }
+    console.log(mean, rating);
     let stars = new Array(5).fill(false);
-    for (let i = 0; i < Math.floor(average); i++) {
-      stars[i] = true;
+    for (let i = 0; i <= mean - 1; i++) {
+      if (i > mean - 1) {
+        stars[i] = null;
+      } else {
+        stars[i] = true;
+      }
     }
     return stars;
   }
@@ -153,14 +179,7 @@ const Review = ({ reviews }) => {
           <CardCont>
             <Group>
               <h2>Customer Reviews</h2>
-              <Stars>
-                <StarGroup>
-                  {displayStars(average).map((elem) =>
-                    elem ? <Yellow /> : <FaRegStar />
-                  )}
-                </StarGroup>
-                {`${average} out of 5`}
-              </Stars>
+              {reviewStars(average, false)}
               <small>{total} customer ratings</small>
             </Group>
             <InputGroup>
@@ -178,6 +197,7 @@ const Review = ({ reviews }) => {
               <div>
                 {/* <img src={curr.profile} alt="profile" /> */}
                 <p>{curr.title}</p>
+                {reviewStars(curr.rating, true)}
                 <small>{truncateString(curr.review, 200)}</small>
                 <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2693472-Reviews-Flamingo-London_England.html">
                   Read more
