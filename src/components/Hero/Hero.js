@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
@@ -86,22 +86,26 @@ const Text = styled(flex)`
   flex-direction: column;
 `;
 const Hero = () => {
+  const title = useRef(null)
+  const text = "Flamingo Restaurant"
   return (
     <HeroContainer>
       <BG></BG>
-      <Wrapper>
-        <Content>
+      <Wrapper >
+        <Content >
           <Text>
-            <h1>Flamingo Restaurant</h1>
+            <h1 data-aos="fade-out" data-aos-offset='200' ref={title}>Flamingo Restaurant</h1>
             <small>
               Experience <span>Authentic</span> Ethiopian cuisine
             </small>
           </Text>
           <CTAButtons>
-            <Button to="/" big>
+            <Button data-aos="fade-right" data-aos-offset="300"
+              to="/" big>
               Menu
             </Button>
-            <Button to="/" big>
+            <Button data-aos="fade-left" data-aos-offset="300"
+              to="/" big>
               Book A Table
             </Button>
           </CTAButtons>

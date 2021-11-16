@@ -10,7 +10,7 @@ const InfoContainer = styled(flex)`
   background-color: ${({ color }) => (color ? color : Color.white)};
   color: ${({ font }) => (font ? font : Color.black)};
   gap: 2rem;
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 948px) {
     flex-direction: column;
     height: auto;
     padding: 2rem 0;
@@ -21,7 +21,7 @@ const InfoText = styled.div`
   flex: 1;
   padding: 1rem;
   order: ${(props) => (props.reverse === true ? 2 : 1)};
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 948px) {
     order: 1;
   }
 `;
@@ -30,7 +30,7 @@ const InfoImage = styled.div`
   height: 100%;
   order: ${(props) => (props.reverse === true ? 1 : 2)};
 
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 948px) {
     order: 2;
   }
   img {
@@ -47,7 +47,7 @@ const TextWrapper = styled(flex)`
   align-items: ${(props) =>
     props.reverse === true ? "flex-end" : "flex-start"};
 
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 948px) {
     align-items: flex-start;
     text-align: left;
   }
@@ -64,7 +64,8 @@ const InfoSection = ({ info }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
-        <InfoText reverse={info.reverse}>
+        <InfoText id='text' reverse={info.reverse}
+          data-aos={`fade-${info.reverse === true ? "left" : 'right'}`}>
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
             {info.paragraphs.map((para) => (

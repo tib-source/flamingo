@@ -184,7 +184,7 @@ const Review = ({ reviews }) => {
     <Container>
       <Wrapper>
         <Left>
-          <CardCont>
+          <CardCont data-aos="fade-in" data-aos-duration='300' >
             <Group>
               <h2>Customer Reviews</h2>
               {reviewStars(average, false)}
@@ -199,10 +199,10 @@ const Review = ({ reviews }) => {
             </InputGroup>
           </CardCont>
         </Left>
-        <Right>
-          {reviews.map((curr) => (
-            <User>
-              <div>
+        <Right >
+          {reviews.map((curr, index) => (
+            <User data-aos="fade-up" data-aos-delay={300 * index} data-offset="1000">
+              <div >
                 {/* <img src={curr.profile} alt="profile" /> */}
                 <p>{curr.title}</p>
                 {reviewStars(curr.rating, true)}
@@ -215,7 +215,7 @@ const Review = ({ reviews }) => {
           ))}
         </Right>
       </Wrapper>
-    </Container>
+    </Container >
   );
 };
 
