@@ -52,6 +52,10 @@ const Content = styled(flex)`
   padding: 7rem 0;
   text-align: center;
   gap: 2rem;
+  @media screen and (max-width: 500px) {
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
   h1 {
     font-size: min(13vw, 5rem);
     color: ${Color.black};
@@ -86,25 +90,25 @@ const Text = styled(flex)`
   flex-direction: column;
 `;
 const Hero = () => {
-  const title = useRef(null)
+  const title = useRef(null);
   return (
     <HeroContainer>
       <BG></BG>
-      <Wrapper >
-        <Content >
+      <Wrapper>
+        <Content>
           <Text>
-            <h1 data-aos="fade-out" data-aos-offset='200' ref={title}>Flamingo Restaurant</h1>
+            <h1 data-aos="fade-out" data-aos-offset="200" ref={title}>
+              Flamingo Restaurant
+            </h1>
             <small>
               Experience <span>Authentic</span> Ethiopian cuisine
             </small>
           </Text>
           <CTAButtons>
-            <Button data-aos="fade-right" data-aos-offset="300"
-              to="/" big>
+            <Button data-aos="fade-right" data-aos-offset="300" to="/" big>
               Menu
             </Button>
-            <Button data-aos="fade-left" data-aos-offset="300"
-              to="/" big>
+            <Button data-aos="fade-left" data-aos-offset="300" to="/" big>
               Book A Table
             </Button>
           </CTAButtons>

@@ -6,26 +6,33 @@ import Header from "./Header/Header";
 import Dropdown from "./Dropdown/Dropdown";
 import { HeaderData, HeaderButtonData } from "../data/HeaderData";
 import Footer from "./Footer/Footer";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Menu from "../pages/Menu/Menu";
 import BookTable from "../pages/Book/BookTable";
 import Gallery from "../pages/Gallery/Gallery";
 import Contact from "../pages/Contact/Contact";
 import About from "../pages/About/About";
 function App() {
-  const [IsOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
-    setIsOpen(!IsOpen);
+  const toggle = (element = null) => {
+    if (isOpen && element.current) {
+      element.current.classList.add("fadeout");
+      setTimeout(() => {
+        element.current.classList.add("fadeout");
+        setIsOpen(!isOpen);
+      }, 200);
+    } else {
+      setIsOpen(!isOpen);
+    }
   };
 
   useEffect(() => {
     AOS.init({
-      duration: 1000
-    })
-  }, [])
-
+      duration: 1000,
+    });
+  }, []);
 
   return (
     <Router>
@@ -35,7 +42,7 @@ function App() {
         HeaderButtonData={HeaderButtonData}
         HeaderData={HeaderData}
       />
-      {IsOpen && (
+      {isOpen && (
         <Dropdown
           toggle={toggle}
           HeaderButtonData={HeaderButtonData}
@@ -51,7 +58,6 @@ function App() {
         <Route path="/about" component={About} />
       </Switch>
       <Footer HeaderData={HeaderData} />
-
     </Router>
   );
 }

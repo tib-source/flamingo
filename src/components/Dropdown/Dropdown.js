@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { Color } from "../../data/Color";
@@ -12,6 +12,16 @@ const fadeInMenu = keyframes`
   }
   to{
     transform: translateX(0px);
+  }
+`;
+
+const fadeOutMenu = keyframes`
+  from{
+    transform: translateX(0px);
+  }
+  to{
+    transform: translateX(25px);
+    opacity: 0;
   }
 `;
 const DropdownWrapper = styled.div`
@@ -92,16 +102,21 @@ export const Icon = styled.div`
 `;
 
 const Dropdown = (props) => {
-  console.log(props)
+  console.log(props);
+  const Menu = useRef(null);
   return (
-    <DropdownWrapper>
+    <DropdownWrapper ref={Menu}>
       <Icon onClick={props.toggle}>
         <FaTimes />
       </Icon>
       <DropdownMenu>
         <DropdownContent>
           {props.HeaderData.map((elem, indx) => (
-            <DropdownLinks key={indx} to={elem.link} >
+            <DropdownLinks
+              onClick={() => props.toggle(Menu)}
+              key={indx}
+              to={elem.link}
+            >
               {elem.title}
             </DropdownLinks>
           ))}
