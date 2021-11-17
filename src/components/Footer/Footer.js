@@ -14,7 +14,7 @@ const Container = styled(flex)`
 `;
 
 const Wrapper = styled(flex)`
-  width: 90%;
+  width: min(90%, 1100px);
   flex-direction: column;
   gap: 1rem;
   padding: 4rem 0rem 1rem;
@@ -51,7 +51,7 @@ const Socials = styled(flex)`
 export const HeaderContent = styled(flex)`
   gap: 2rem;
 
-  @media screen and (max-width: 914px) {
+  @media screen and (max-width: 600px) {
     gap: 1rem;
     flex-direction: column;
   }

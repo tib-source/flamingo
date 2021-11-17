@@ -52,12 +52,12 @@ const Content = styled(flex)`
   padding: 7rem 0;
   text-align: center;
   gap: 2rem;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 796px) {
     padding: 3rem 0;
     margin-bottom: 3rem;
   }
   h1 {
-    font-size: min(13vw, 5rem);
+    font-size: min(12vw, 4rem);
     color: ${Color.black};
     padding: 0;
     margin: 0;
@@ -65,13 +65,13 @@ const Content = styled(flex)`
     font-style: italic;
     font-weight: 900;
   }
-  small {
-    font-size: min(3.5vw, 1.25rem);
+  p {
+    font-size: min(4vw, 1.25rem);
     padding: 0;
     margin: 0;
     color: ${Color.white};
     font-weight: 700;
-    filter: drop-shadow(2px 2px 0.5px ${Color.black});
+    filter: drop-shadow(2px 2px 0.5px ${Color.lightBlack});
   }
   span {
     color: ${Color.orange};
@@ -100,9 +100,9 @@ const Hero = () => {
             <h1 data-aos="fade-out" data-aos-offset="200" ref={title}>
               Flamingo Restaurant
             </h1>
-            <small>
+            <p>
               Experience <span>Authentic</span> Ethiopian cuisine
-            </small>
+            </p>
           </Text>
           <CTAButtons>
             <Button data-aos="fade-right" data-aos-offset="300" to="/" big>
