@@ -63,8 +63,11 @@ const InfoSection = ({ info }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
-        <InfoText id='text' reverse={info.reverse}
-          data-aos={`fade-${info.reverse === true ? "left" : 'right'}`}>
+        <InfoText
+          id="text"
+          reverse={info.reverse}
+          data-aos={`fade-${info.reverse === true ? "left" : "right"}`}
+        >
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
             {info.paragraphs.map((para, index) => (
@@ -76,7 +79,7 @@ const InfoSection = ({ info }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <img src={info.image} alt="" />
+          <img src={info.image} alt={info.image} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>

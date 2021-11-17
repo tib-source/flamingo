@@ -4,7 +4,6 @@ import * as S from "./HeaderStyle";
 import { FaBars } from "react-icons/fa";
 
 const Header = (props) => {
-
   return (
     <S.HeaderWrapper>
       <S.Icon to="/">
@@ -23,7 +22,7 @@ const Header = (props) => {
       </S.HeaderContent>
       <S.HeaderButtons>
         {props.HeaderButtonData.map((elem, indx) => (
-          <Button key={indx} reverse={elem.reverse} to={elem.link}>
+          <Button key={indx} $reverse={elem.reverse} to={elem.link}>
             {elem.title}
           </Button>
         ))}

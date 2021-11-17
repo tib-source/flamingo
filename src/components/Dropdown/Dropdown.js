@@ -14,16 +14,6 @@ const fadeInMenu = keyframes`
     transform: translateX(0px);
   }
 `;
-
-const fadeOutMenu = keyframes`
-  from{
-    transform: translateX(0px);
-  }
-  to{
-    transform: translateX(25px);
-    opacity: 0;
-  }
-`;
 const DropdownWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -124,7 +114,12 @@ const Dropdown = (props) => {
         <hr />
         <DropdownButtons>
           {props.HeaderButtonData.map((elem, indx) => (
-            <Button big={true} key={indx} reverse={elem.reverse} to={elem.link}>
+            <Button
+              $big={true}
+              key={indx}
+              $reverse={elem.reverse}
+              to={elem.link}
+            >
               {elem.title}
             </Button>
           ))}

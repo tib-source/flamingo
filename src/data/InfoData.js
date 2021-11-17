@@ -15,6 +15,7 @@ export const InfoData = [
     reverse: false,
     color: Color.white,
     image: ImageOne,
+    alt: "picture of ethiopian dish",
     font: Color.black,
   },
   {
@@ -29,5 +30,6 @@ export const InfoData = [
     image: ImageTwo,
     color: Color.black,
     font: Color.white,
+    alt: "picture of ethiopian dish",
   },
 ];

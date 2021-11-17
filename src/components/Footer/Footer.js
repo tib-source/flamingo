@@ -45,7 +45,16 @@ const Bottom = styled(flex)`
 const Socials = styled(flex)`
   color: white;
   font-size: 1.5rem;
-  gap: 1rem;
+
+  a {
+    all: unset;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: 300ms ease-in-out;
+    &:hover {
+      color: ${Color.orange};
+    }
+  }
 `;
 
 export const HeaderContent = styled(flex)`
@@ -78,9 +87,15 @@ const Footer = (props) => {
         <Top>
           <h2>Flamingo</h2>
           <Socials>
-            <FaInstagram />
-            <FaYoutube />
-            <FaFacebook />
+            <a href="https://www.instagram.com/flamingo_restaurant_london/">
+              <FaInstagram />
+            </a>
+            <a href="https://www.youtube.com/watch?app=desktop&v=iN3FcGW9EO4&feature=youtu.be">
+              <FaYoutube />
+            </a>
+            <a href="https://www.facebook.com/pages/Flamingo-Eithiopian-Restaurant/109275565894571">
+              <FaFacebook />
+            </a>
           </Socials>
         </Top>
         <Bottom>
@@ -91,7 +106,7 @@ const Footer = (props) => {
               </HeaderLinks>
             ))}
           </HeaderContent>
-          <Button reverse={true} to="/book">
+          <Button $reverse={true} to="/book">
             Book A Table
           </Button>
         </Bottom>
