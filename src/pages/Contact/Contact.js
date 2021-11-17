@@ -25,10 +25,90 @@ const Content = styled(flex)`
   background: ${Color.white};
   height: 100%;
 `;
+
+const PlaceHolder = styled.div`
+  height: 450px;
+  flex: 1;
+  background: red;
+`;
+
+const FormDiv = styled(flex)`
+  height: 100%;
+  background: ${Color.white};
+  flex-flow: column;
+  flex: 1;
+  padding: 3rem;
+  gap: 1rem;
+  label {
+    display: grid;
+    gap: 0.2rem;
+  }
+  form {
+    display: grid;
+    gap: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  input {
+    border: none;
+    background: inherit;
+    border-bottom: 1px solid ${Color.gray};
+    padding: 0.25rem 0.75rem;
+    outline: none;
+
+    &:focus {
+      border-bottom: 2px solid ${Color.black};
+    }
+  }
+`;
+
+const Group = styled(flex)`
+  gap: 1rem;
+`;
 const Contact = () => {
   return (
     <Container>
       <Title title="Contact" />
+      <Wrapper>
+        <PlaceHolder className="text"></PlaceHolder>
+        <FormDiv className="form">
+          <h3> Contact us </h3>
+          <form>
+            <Group>
+              <label>
+                FIRST NAME
+                <input type="text" placeholder="Enter your first name" />
+              </label>
+              <label>
+                Last NAME
+                <input type="text" placeholder="Enter your last name" />
+              </label>
+            </Group>
+            <Group>
+              <label>
+                Email
+                <input type="email" placeholder="Enter your email" />
+              </label>
+              <label>
+                Phone Number
+                <input type="tel" placeholder="Enter your phone number" />
+              </label>
+            </Group>
+            <label>
+              Message
+              <input type="text" placeholder="Enter your message" />
+            </label>
+            <button> Submit -></button>
+          </form>
+          <div className="email">
+            EMAIL US
+            <a href="mailto:admin@flamingo-restaurant.com">
+              admin@flamingo-restaurant.com
+            </a>
+          </div>
+        </FormDiv>
+      </Wrapper>
       <Wrapper>
         <iframe
           title="map"

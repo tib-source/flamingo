@@ -20,7 +20,7 @@ const Container = styled(flex)`
 const Wrapper = styled(flex)`
   width: min(90 vw, 1100 px);
   gap: 1rem;
-    @media screen and (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
   }
 `;
@@ -35,7 +35,7 @@ const Right = styled.div`
   width: min(90vw, 1000px);
   height: 390px;
   overflow-x: scroll;
-    @media screen and (max-width: 900px) {
+  @media screen and (max-width: 900px) {
   }
   /* width */
   ::-webkit-scrollbar {
@@ -74,8 +74,8 @@ const Stars = styled(flex)`
   gap: 0.5rem;
   font-size: ${(props) => (props.rating ? "1rem" : "1.25rem")};
 
-    @media screen and (max-width: 600px) {
-  padding: ${(props) => (props.rating ? "0rem" : "0.5rem 1.25rem")};
+  @media screen and (max-width: 600px) {
+    padding: ${(props) => (props.rating ? "0rem" : "0.5rem 1.25rem")};
   }
 `;
 const Group = styled(flex)`
@@ -144,7 +144,13 @@ const Review = ({ reviews }) => {
       <Stars rating={rating}>
         <StarGroup>
           {displayStars(value, rating).map((elem, index) =>
-            elem ? <Yellow key={index} /> : elem === null ? <YellowHalf key={index} /> : <BsStar key={index} />
+            elem ? (
+              <Yellow key={index} />
+            ) : elem === null ? (
+              <YellowHalf key={index} />
+            ) : (
+              <BsStar key={index} />
+            )
           )}
         </StarGroup>
         {rating ? `${value / 10} out of 5` : `${average} out of 5`}
@@ -183,7 +189,7 @@ const Review = ({ reviews }) => {
     <Container>
       <Wrapper>
         <Left>
-          <CardCont data-aos="fade-in" data-aos-duration='300' >
+          <CardCont data-aos="fade-in" data-aos-duration="300">
             <Group>
               <h2>Customer Reviews</h2>
               {reviewStars(average, false)}
@@ -198,15 +204,23 @@ const Review = ({ reviews }) => {
             </InputGroup>
           </CardCont>
         </Left>
-        <Right >
+        <Right>
           {reviews.map((curr, index) => (
-            <User key={index} data-aos="fade-up" data-aos-delay={300 * index} data-offset="1000">
-              <div >
+            <User
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={300 * index}
+              data-offset="1000"
+            >
+              <div>
                 {/* <img src={curr.profile} alt="profile" /> */}
                 <p>{curr.title}</p>
                 {reviewStars(curr.rating, true)}
                 <small>{truncateString(curr.review, 200)}</small>
-                <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2693472-Reviews-Flamingo-London_England.html">
+                <a
+                  href="https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2693472-Reviews-Flamingo-London_England.html"
+                  rel="nofollow"
+                >
                   Read more
                 </a>
               </div>
@@ -214,7 +228,7 @@ const Review = ({ reviews }) => {
           ))}
         </Right>
       </Wrapper>
-    </Container >
+    </Container>
   );
 };
 
