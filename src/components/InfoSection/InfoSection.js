@@ -79,7 +79,7 @@ const InfoSection = ({ info }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <img src={info.image} alt={info.image} />
+          <img src={info.image} alt={info.alt} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>
