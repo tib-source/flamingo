@@ -14,6 +14,7 @@ const HeroContainer = styled.section`
   display: block;
   @media screen and (max-width: 948px) {
     height: 80vh;
+  }
 `;
 
 const BG = styled.div`
@@ -114,10 +115,10 @@ const Hero = () => {
             </p>
           </Text>
           <CTAButtons>
-            <Button data-aos="fade-right" data-aos-offset="300" to="/" $big>
+            <Button $big data-aos="fade-right" data-aos-offset="300" to="/">
               Menu
             </Button>
-            <Button data-aos="fade-left" data-aos-offset="300" to="/" $big>
+            <Button $big data-aos="fade-left" data-aos-offset="300" to="/">
               Book A Table
             </Button>
           </CTAButtons>
