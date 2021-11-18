@@ -119,6 +119,7 @@ const Dropdown = (props) => {
               key={indx}
               $reverse={elem.reverse}
               to={elem.link}
+              onClick={() => props.toggle(Menu)}
             >
               {elem.title}
             </Button>

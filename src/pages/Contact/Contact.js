@@ -12,6 +12,7 @@ const Container = styled(flex)`
 
 const heightCss = css`
   height: min(600px, 50vh);
+  width: min(100%, 1000px);
 `;
 const contentCss = css`
   align-items: flex-start;
@@ -23,7 +24,7 @@ const contentCss = css`
 `;
 
 const wrapperCss = css`
-  width: min(90%, 1000px);
+  width: min(100%, 1000px);
   margin: 5rem 0;
   @media screen and (max-width: 948px) {
     flex-direction: column-reverse;
@@ -31,7 +32,7 @@ const wrapperCss = css`
 `;
 const Wrapper = styled(flex)`
   ${heightCss}
-  width: min(90%, 1000px);
+  ${wrapperCss}
   margin: 0 0 5rem 0;
 
   @media screen and (max-width: 948px) {
@@ -54,7 +55,13 @@ const PlaceHolder = styled(flex)`
   flex: 1;
   background: ${Color.black};
   color: ${Color.orange};
+  @media screen and (max-width: 948px) {
+    padding: 2rem 0;
 
+    .second {
+      width: 90%;
+    }
+  }
   .second {
     width: 60%;
     justify-content: flex-start;
@@ -85,10 +92,9 @@ const FormDiv = styled(flex)`
   gap: 1rem;
   border: 2px solid ${Color.black};
   h3 {
-    font-size: min(3vw, 2rem);
+    font-size: min(5vw, 2rem);
     padding-bottom: 1rem;
     color: ${Color.black};
-    filter: drop-shadow(2px 2px 1px ${Color.orange});
   }
   @media screen and (max-width: 948px) {
     padding: 2rem;
@@ -149,6 +155,7 @@ const Email = styled.div`
   font-weight: 550;
   padding: 0rem 3.5rem;
   color: ${Color.lightBlack};
+  cursor: pointer;
   a {
     all: unset;
     font-weight: 500;

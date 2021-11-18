@@ -3,21 +3,22 @@ import Title from "../../components/Title/Title";
 import { flex } from "../../components/Util/flex";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
-
+import { aboutUs } from "../../data/AboutUsData";
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
 `;
 const Wrapper = styled(flex)`
-  width: min(90%, 1200px);
-  height: min(450px, 50vh);
-  margin: 5rem 0;
+  width: min(80%, 1000px);
+  margin: 10rem 0;
 
-  @media screen and (max-width: 948px) {
-    flex-direction: column;
+  h4 {
+    font-size: 1.25rem;
   }
-  iframe {
+  img {
+    flex: 1;
     height: min(450px, 50vh);
+    object-fit: cover;
   }
 `;
 const Content = styled(flex)`
@@ -25,19 +26,31 @@ const Content = styled(flex)`
   flex-direction: column;
   flex: 1;
   padding: 2rem;
+
+  text-align: justify;
+  gap: 1rem;
   background: ${Color.white};
   height: 100%;
+
+  @media screen and (max-width: 600px) {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
 `;
 const About = () => {
   return (
     <div>
-      <Title title="About Us" />
+      <Title title={aboutUs.title} />
       <Container>
         <Wrapper>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sed
-          rerum ullam alias commodi non, eos fugit ea aspernatur totam ipsum at
-          maxime repellendus, laborum eveniet esse quam eius voluptate unde
-          quisquam saepe quas veritatis. Debitis totam nobis minima ab.
+          <Content>
+            <h4>Who we are</h4>
+            {aboutUs.paragraphs.map((elem, index) => (
+              <p key={index}>{elem}</p>
+            ))}
+          </Content>
+
+          <img src={aboutUs.image} alt="flamingo restaurant interiour" />
         </Wrapper>
       </Container>
     </div>
