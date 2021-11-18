@@ -39,7 +39,15 @@ function App() {
 
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="loader">
+            <svg className="loading" viewBox="25 25 50 50">
+              <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+          </div>
+        }
+      >
         <GlobalStyle />
         <Header
           toggle={toggle}

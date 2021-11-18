@@ -1,5 +1,5 @@
 import { createGlobalStyle, keyframes } from "styled-components";
-
+import { Color } from "./../data/Color";
 const fadeOutMenu = keyframes`
   0%{
     transform: translateX(0px);
@@ -23,7 +23,53 @@ body, html{
   font-family: 'Poppins', sans-serif;
   overflow: auto;
   box-sizing: inherit;
+  background: ${Color.black}
  }
+
+.loader{ 
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.loading{
+  width: 3.75em;
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: #fc2f70;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
 
 
 
