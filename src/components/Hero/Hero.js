@@ -12,6 +12,8 @@ const HeroContainer = styled.section`
   position: relative;
   z-index: 1;
   display: block;
+  @media screen and (max-width: 948px) {
+    height: 80vh;
 `;
 
 const BG = styled.div`
@@ -33,6 +35,13 @@ const BG = styled.div`
     background: linear-gradient(0deg, #ffffff2b 0%, #ffffff2b 50%, #000 100%);
     opacity: 0.6;
     z-index: 0;
+  }
+
+  @media screen and (max-width: 948px) {
+    height: 90vh;
+    &::before {
+      height: 90vh;
+    }
   }
 `;
 

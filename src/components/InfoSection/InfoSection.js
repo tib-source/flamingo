@@ -41,14 +41,15 @@ const InfoImage = styled.div`
   }
 `;
 const TextWrapper = styled(flex)`
-  text-align: justify;
+  gap: 1rem;
   flex-direction: column;
+  text-align: justify;
   align-items: ${(props) =>
     props.reverse === true ? "flex-end" : "flex-start"};
 
   @media screen and (max-width: 948px) {
     align-items: flex-start;
-    text-align: left;
+    padding: 0 1.5rem;
   }
 `;
 
@@ -70,11 +71,13 @@ const InfoSection = ({ info }) => {
         >
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
-            {info.paragraphs.map((para, index) => (
-              <p key={index}>{para}</p>
-            ))}
+            {info.paragraphs.map((para, index) => {
+              return index <= 5 && <p key={index}>{para}</p>;
+            })}
             {info.button && (
-              <Button to={info.buttonPath}>{info.buttonLabel}</Button>
+              <Button to={info.buttonPath} $reverse={info.reverse}>
+                {info.buttonLabel}
+              </Button>
             )}
           </TextWrapper>
         </InfoText>
