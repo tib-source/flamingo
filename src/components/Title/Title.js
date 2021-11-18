@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
-import Background from "./../../images/background.jpg";
+import Background from "./../../images/background-min.jpg";
 
 const Container = styled.section`
   width: 100%;
@@ -43,11 +43,11 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: flex-end;
 
-  h1{ 
+  h1 {
     z-index: 1;
     font-size: min(10vw, 5rem);
     text-transform: uppercase;
-    filter: drop-shadow( 3px 3px 1px ${Color.orange});
+    filter: drop-shadow(3px 3px 1px ${Color.orange});
   }
 `;
 const Title = (props) => {
@@ -58,7 +58,7 @@ const Title = (props) => {
         <h1>{props.title}</h1>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Title
+export default Title;

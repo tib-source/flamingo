@@ -1,5 +1,5 @@
-import ImageTwo from "./../images/Injera-2.jpg";
-import ImageOne from "./../images/Injera-1.jpg";
+import ImageTwo from "./../images/Injera-2-min.jpg";
+import ImageOne from "./../images/Injera-1-min.jpg";
 import { Color } from "./Color";
 
 export const InfoData = [

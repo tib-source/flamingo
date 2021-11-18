@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
-import Background from "./../../images/background.jpg";
+import Background from "./../../images/background-min.jpg";
 
 const HeroContainer = styled.section`
   width: 100%;

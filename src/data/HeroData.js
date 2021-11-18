@@ -1,4 +1,4 @@
-import ImageOne from "./../images/Injera-1.jpg";
+import ImageOne from "./../images/Injera-1-min.jpg";
 export const HeroData = {
   title: "Demo for Nati",
   paragraph: "Exprience authentic Ethiopian cuisine",
