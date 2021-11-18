@@ -14,14 +14,14 @@ const heightCss = css`
   height: min(600px, 50vh);
   width: min(100%, 1000px);
 `;
-const contentCss = css`
-  align-items: flex-start;
-  flex: 1;
-  padding: 2rem;
-  background: ${Color.white};
-  height: 100%;
-  width: 100%;
-`;
+// const contentCss = css`
+//   align-items: flex-start;
+//   flex: 1;
+//   padding: 2rem;
+//   background: ${Color.white};
+//   height: 100%;
+//   width: 100%;
+// `;
 
 const wrapperCss = css`
   width: min(100%, 1000px);
@@ -42,10 +42,6 @@ const Wrapper = styled(flex)`
     ${heightCss}
   }
 `;
-const Content = styled(flex)`
-  ${contentCss}
-`;
-
 const Second = styled(flex)`
   ${wrapperCss}
   margin-bottom: 0;
