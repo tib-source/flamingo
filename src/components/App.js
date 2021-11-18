@@ -1,18 +1,21 @@
 import { GlobalStyle } from "./globalStyle";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Home from "../pages/Home/Home";
-import Header from "./Header/Header";
-import Dropdown from "./Dropdown/Dropdown";
+import React, { Suspense, lazy } from "react";
 import { HeaderData, HeaderButtonData } from "../data/HeaderData";
-import Footer from "./Footer/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Menu from "../pages/Menu/Menu";
-import BookTable from "../pages/Book/BookTable";
-import Gallery from "../pages/Gallery/Gallery";
-import Contact from "../pages/Contact/Contact";
-import About from "../pages/About/About";
+
+const Dropdown = lazy(() => import("./Dropdown/Dropdown"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const Footer = lazy(() => import("./Footer/Footer"));
+const Header = lazy(() => import("./Header/Header"));
+const About = lazy(() => import("../pages/About/About"));
+const Gallery = lazy(() => import("../pages/Gallery/Gallery"));
+const Menu = lazy(() => import("../pages/Menu/Menu"));
+const Contact = lazy(() => import("../pages/Contact/Contact"));
+const BookTable = lazy(() => import("../pages/Book/BookTable"));
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,28 +39,30 @@ function App() {
 
   return (
     <Router>
-      <GlobalStyle />
-      <Header
-        toggle={toggle}
-        HeaderButtonData={HeaderButtonData}
-        HeaderData={HeaderData}
-      />
-      {isOpen && (
-        <Dropdown
+      <Suspense fallback={<div>Loading...</div>}>
+        <GlobalStyle />
+        <Header
           toggle={toggle}
           HeaderButtonData={HeaderButtonData}
           HeaderData={HeaderData}
         />
-      )}
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/menu" component={Menu} />
-        <Route path="/book" component={BookTable} />
-        <Route path="/gallery" component={Gallery} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/about" component={About} />
-      </Switch>
-      <Footer HeaderData={HeaderData} />
+        {isOpen && (
+          <Dropdown
+            toggle={toggle}
+            HeaderButtonData={HeaderButtonData}
+            HeaderData={HeaderData}
+          />
+        )}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/menu" component={Menu} />
+          <Route path="/book" component={BookTable} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+        </Switch>
+        <Footer HeaderData={HeaderData} />
+      </Suspense>
     </Router>
   );
 }
