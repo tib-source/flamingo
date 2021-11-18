@@ -5,16 +5,16 @@ import React, { Suspense, lazy } from "react";
 import { HeaderData, HeaderButtonData } from "../data/HeaderData";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
+import About from "./../pages/About/About";
+import Gallery from "../pages/Gallery/Gallery";
+import Menu from "../pages/Menu/Menu";
+import Contact from "../pages/Contact/Contact";
+import BookTable from "../pages/Book/BookTable";
+import Dropdown from "./Dropdown/Dropdown";
 
-const Dropdown = lazy(() => import("./Dropdown/Dropdown"));
 const Home = lazy(() => import("../pages/Home/Home"));
-const Footer = lazy(() => import("./Footer/Footer"));
-const Header = lazy(() => import("./Header/Header"));
-const About = lazy(() => import("../pages/About/About"));
-const Gallery = lazy(() => import("../pages/Gallery/Gallery"));
-const Menu = lazy(() => import("../pages/Menu/Menu"));
-const Contact = lazy(() => import("../pages/Contact/Contact"));
-const BookTable = lazy(() => import("../pages/Book/BookTable"));
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
