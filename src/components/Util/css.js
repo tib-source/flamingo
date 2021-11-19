@@ -3,6 +3,8 @@ import { Color } from "../../data/Color";
 import { flex } from "./flex";
 
 export const Container = styled(flex)`
+  background: ${Color.white};
+
   width: 100%;
 `;
 export const heightCss = css`
@@ -28,5 +30,4 @@ export const wrapperCss = css`
 export const containerCss = css`
   background: ${Color.white};
   width: 100vw;
-  
-`
+`;
