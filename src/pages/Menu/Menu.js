@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Title from "../../components/Title/Title";
+import { MenuData } from "../../data/Menu";
 import {
   containerCss,
   contentCss,
@@ -12,7 +13,7 @@ import Kitfo from "./../../images/kitfo.jpg";
 
 const Container = styled(flex)`
   ${containerCss}
-  padding: 10rem;
+  width: 100%;
   flex-flow: column;
   gap: 1rem;
 
@@ -26,8 +27,11 @@ const Container = styled(flex)`
   }
 `;
 
-const Wrapper = styled.div`
-  ${wrapperCss}
+const Wrapper = styled(flex)`
+  flex-flow: column;
+  width: min(90%, 1000px);
+  padding: 5rem 0rem;
+  gap: 1rem;
 `;
 
 const Content = styled.div`
@@ -78,10 +82,13 @@ const Filter = styled(flex)`
 const Food = styled.div`
   display: grid;
   width: 100%;
+  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 `;
 const Card = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: relative;
   border-radius: 1em;
   display: flex;
@@ -121,47 +128,70 @@ const Card = styled.div`
   }
 `;
 const Menu = () => {
+  const Orignial = MenuData;
+  const [Menu, setMenu] = useState(MenuData);
+
+  const handleFilter = (event) => {
+    const filterTag = event.target.innerText;
+    console.log(filterTag);
+    const filteredMenu = Orignial.filter((item) =>
+      item.tag.includes(filterTag)
+    );
+
+    if (filteredMenu.length === 0 || filterTag === "All") {
+      return setMenu(Orignial);
+    }
+
+    setMenu(filteredMenu);
+  };
   return (
     <div>
       <Title title="Our Menu" />
       <Container>
-        <h4>Meals</h4>
-        <Filter>
-          <button>Kids</button>
-          <hr />
-          <button>Chef's Special</button>
-          <hr />
-          <button>Rick</button>
-          <hr />
-          <button>Fish</button>
-          <hr />
-
-          <button>Vegeterian</button>
-          <hr />
-
-          <button>Chicken</button>
-          <hr />
-
-          <button>Lamb</button>
-          <hr />
-
-          <button>Beef</button>
-          <hr />
-
-          <button>Side/Apeetizer</button>
-        </Filter>
-
-        <Food>
-          <Card>
-            <div className="bg">
-              <img src={Kitfo} alt="" srcset="" />
-            </div>
-            <div className="info">
-              <h5 className="name">Kitfo</h5>
-              <h5 className="price">£10</h5>
-            </div>
-          </Card>
-        </Food>
+        <Wrapper>
+          <h4>Meals</h4>
+          <Filter>
+            <button onClick={handleFilter}>All</button>
+            <hr />
+            <button onClick={handleFilter}>Kids</button>
+            <hr />
+            <button onClick={handleFilter}>Chef's Special</button>
+            <hr />
+            <button onClick={handleFilter}>Rice</button>
+            <hr />
+            <button onClick={handleFilter}>Fish</button>
+            <hr />
+            <button onClick={handleFilter}>Vegeterian</button>
+            <hr />
+            <button onClick={handleFilter}>Chicken</button>
+            <hr />
+            <button onClick={handleFilter}>Lamb</button>
+            <hr />
+            <button onClick={handleFilter}>Beef</button>
+            <hr />
+            <button onClick={handleFilter}>Side/Apeetizer</button>
+          </Filter>
+          <Food>
+            {Menu.map((food) => {
+              console.log(Menu);
+              if (Menu === "") {
+                return "meow";
+              } else {
+                return (
+                  <Card>
+                    <div className="bg">
+                      <img src={Kitfo} alt="" srcset="" />
+                    </div>
+                    <div className="info">
+                      <h5 className="name">{food.name}</h5>
+                      <h5 className="price">£{food.price}</h5>
+                    </div>
+                  </Card>
+                );
+              }
+            })}
+          </Food>
+        </Wrapper>
       </Container>
     </div>
   );
