@@ -25,3 +25,8 @@ export const wrapperCss = css`
     flex-direction: column-reverse;
   }
 `;
+export const containerCss = css`
+  background: ${Color.white};
+  width: 100vw;
+  
+`

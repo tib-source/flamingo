@@ -44,7 +44,7 @@ const BG = styled.div`
       height: 90vh;
     }
   }
-`;
+`
 
 const Wrapper = styled.div`
   width: 100%;
