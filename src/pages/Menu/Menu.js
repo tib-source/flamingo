@@ -83,8 +83,10 @@ const Food = styled.div`
   display: grid;
   width: 100%;
   margin-top: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
+  justify-content: center;
+  place-items: center;
 `;
 const Card = styled.div`
   width: 300px;
@@ -123,8 +125,8 @@ const Card = styled.div`
     }
   }
   &:hover {
-    opacity: 0.8;
-    transform: scale(1.02);
+    opacity: 0.8 !important;
+    transform: scale(1.02) !important;
   }
 `;
 const Menu = () => {
@@ -167,9 +169,9 @@ const Menu = () => {
             <hr />
             <button onClick={handleFilter}>Lamb</button>
             <hr />
-            <button onClick={handleFilter}>Beef</button>
+            <button onClick={handleFilter}>Side</button>
             <hr />
-            <button onClick={handleFilter}>Side/Apeetizer</button>
+            <button onClick={handleFilter}>Appetizer</button>
           </Filter>
           <Food>
             {Menu.map((food) => {
@@ -178,12 +180,17 @@ const Menu = () => {
                 return "meow";
               } else {
                 return (
-                  <Card>
+                  <Card
+                    data-aos-anchor-placement="top-bottom"
+                    data-aos="zoom-in"
+                    data-aos-duration="500"
+                  >
                     <div className="bg">
                       <img src={Kitfo} alt="" srcset="" />
                     </div>
                     <div className="info">
                       <h5 className="name">{food.name}</h5>
+                      <small>{food.description}</small>
                       <h5 className="price">£{food.price}</h5>
                     </div>
                   </Card>
