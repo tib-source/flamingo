@@ -115,10 +115,10 @@ const Hero = () => {
             </p>
           </Text>
           <CTAButtons>
-            <Button $big data-aos="fade-right" data-aos-offset="300" to="/menu">
+            <Button to="/menu" $big data-aos="fade-right" data-aos-offset="300">
               Menu
             </Button>
-            <Button $big data-aos="fade-left" data-aos-offset="300" to="/book">
+            <Button to="/book" $big data-aos="fade-left" data-aos-offset="300">
               Book A Table
             </Button>
           </CTAButtons>
