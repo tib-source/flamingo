@@ -26,10 +26,16 @@ const ImageList = [
   ImageSix,
 ];
 
-const StyledGallery = styled.div`
-  width: 70%;
+const StyledGallery = styled(flex)`
+  display: block;
+  width: min(1300px, 90vw);
   column-count: 3;
   column-width: 33%;
+  @media screen and (max-width: 948px) {
+    display: flex;
+    column-count: 1;
+    column-width: 100%;
+  }
   img {
     margin: 1rem;
     width: 100%;
