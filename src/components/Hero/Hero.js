@@ -44,7 +44,7 @@ const BG = styled.div`
       height: 90vh;
     }
   }
-`
+`;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -115,10 +115,10 @@ const Hero = () => {
             </p>
           </Text>
           <CTAButtons>
-            <Button $big data-aos="fade-right" data-aos-offset="300" to="/">
+            <Button $big data-aos="fade-right" data-aos-offset="300" to="/menu">
               Menu
             </Button>
-            <Button $big data-aos="fade-left" data-aos-offset="300" to="/">
+            <Button $big data-aos="fade-left" data-aos-offset="300" to="/book">
               Book A Table
             </Button>
           </CTAButtons>
