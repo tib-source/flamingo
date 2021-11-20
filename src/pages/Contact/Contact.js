@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import Title from "../../components/Title/Title";
 import { flex } from "../../components/Util/flex";
@@ -11,7 +11,7 @@ const Container = styled(flex)`
 `;
 
 const heightCss = css`
-  height: min(600px, 50vh);
+  height: 50vh;
   width: min(100%, 1000px);
 `;
 // const contentCss = css`
@@ -31,7 +31,6 @@ const wrapperCss = css`
   }
 `;
 const Wrapper = styled(flex)`
-  ${heightCss}
   ${wrapperCss}
   margin: 0 0 5rem 0;
 
@@ -39,7 +38,8 @@ const Wrapper = styled(flex)`
     flex-direction: column;
   }
   iframe {
-    ${heightCss}
+    width: 100%;
+    height: 50vh;
   }
 `;
 const Second = styled(flex)`
@@ -52,15 +52,16 @@ const PlaceHolder = styled(flex)`
   background: ${Color.black};
   color: ${Color.orange};
   @media screen and (max-width: 948px) {
-    padding: 2rem 0;
+    padding: 1rem 0;
 
     .second {
       width: 90%;
     }
   }
   .second {
-    width: 60%;
-    justify-content: flex-start;
+    width: 90%;
+    display: grid;
+    justify-content: center;
     text-align: left;
 
     a {
@@ -215,12 +216,8 @@ const Contact = () => {
       </Second>
       <Wrapper>
         <iframe
-          width="540px"
-          height="500px"
           title="map"
           style={{ border: "0", flex: 1 }}
-          loading="lazy"
-          allowfullscreen
           src={`https://www.google.com/maps/embed/v1/place?key=${MapApiKey}
             &q=Flamingo+Ethiopian+Restaurant`}
         ></iframe>
