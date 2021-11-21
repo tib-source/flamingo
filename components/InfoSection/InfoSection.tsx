@@ -4,7 +4,13 @@ import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
 
-const InfoContainer = styled(flex)`
+interface styleType {
+  reverse?: boolean;
+  font?: string;
+  color?: string;
+}
+
+const InfoContainer = styled(flex)<styleType>`
   height: 600px;
   background-color: ${({ color }) => (color ? color : Color.white)};
   color: ${({ font }) => (font ? font : Color.black)};
@@ -16,7 +22,7 @@ const InfoContainer = styled(flex)`
   }
 `;
 
-const InfoText = styled.div`
+const InfoText = styled.div<styleType>`
   flex: 1;
   padding: 1rem;
   order: ${(props) => (props.reverse === true ? 2 : 1)};
@@ -24,7 +30,7 @@ const InfoText = styled.div`
     order: 1;
   }
 `;
-const InfoImage = styled.div`
+const InfoImage = styled.div<styleType>`
   flex: 1;
   height: 100%;
   order: ${(props) => (props.reverse === true ? 1 : 2)};
@@ -40,7 +46,7 @@ const InfoImage = styled.div`
     box-shadow: 5px 5px 1px ${Color.orange};
   }
 `;
-const TextWrapper = styled(flex)`
+const TextWrapper = styled(flex)<styleType>`
   gap: 1rem;
   flex-direction: column;
   text-align: justify;
@@ -53,7 +59,7 @@ const TextWrapper = styled(flex)`
   }
 `;
 
-const Wrapper = styled(flex)`
+const Wrapper = styled(flex)<styleType>`
   width: min(90vw, 1100px);
   gap: 2rem;
   @media screen and (max-width: 948px) {
@@ -74,7 +80,7 @@ type InfoType = Readonly<{
   font: string;
 }>;
 
-const InfoSection = ({ info: InfoType }) => {
+const InfoSection = ({ info }: { info: InfoType }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>

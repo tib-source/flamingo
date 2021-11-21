@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "next/link";
 import { Color } from "../../data/Color";
 import { flex } from "../Util/flex";
 import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";

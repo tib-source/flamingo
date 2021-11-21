@@ -8,4 +8,3 @@ export const HeroData = {
   image: ImageOne,
   background: ImageOne,
 };
-

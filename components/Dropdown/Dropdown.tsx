@@ -6,6 +6,9 @@ import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { FaTimes } from "react-icons/fa";
 import { NavLink } from "../Header/HeaderStyle";
+import { Interface } from "readline";
+import { type } from "os";
+import { AnyRecord } from "dns";
 
 const fadeInMenu = keyframes`
   from{
@@ -92,9 +95,22 @@ export const Icon = styled.div`
   }
 `;
 
-const Dropdown = (props) => {
-  console.log(props);
-  const Menu = useRef(null);
+type HeaderType = {
+  title: string;
+  paragraph: string;
+  button: boolean;
+  buttonLabel: string;
+  buttonPath: string;
+  image: string;
+  background: string;
+};
+
+const Dropdown = (props: {
+  toggle: any;
+  HeaderData: object[];
+  HeaderButtonData: object[];
+}) => {
+  const Menu = useRef<HTMLDivElement>(null);
   return (
     <DropdownWrapper ref={Menu}>
       <Icon onClick={props.toggle}>
@@ -102,27 +118,22 @@ const Dropdown = (props) => {
       </Icon>
       <DropdownMenu>
         <DropdownContent>
-          {props.HeaderData.map((elem, indx) => (
-            <DropdownLinks
-              onClick={() => props.toggle(Menu)}
-              key={indx}
-              to={elem.link}
-            >
-              {elem.title}
+          {props.HeaderData.map((elem: any, indx) => (
+            <DropdownLinks key={indx} href={elem.link}>
+              <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
             </DropdownLinks>
           ))}
         </DropdownContent>
         <hr />
         <DropdownButtons>
-          {props.HeaderButtonData.map((elem, indx) => (
+          {props.HeaderButtonData.map((elem: any, indx) => (
             <Button
               $big={true}
               key={indx}
               $reverse={elem.reverse}
-              to={elem.link}
-              onClick={() => props.toggle(Menu)}
+              href={elem.link}
             >
-              {elem.title}
+              <a onClick={(): void => props.toggle(Menu)}>{elem.title}</a>
             </Button>
           ))}
         </DropdownButtons>
