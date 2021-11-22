@@ -109,8 +109,8 @@ const Dropdown = (props: {
         <DropdownContent>
           {props.HeaderData.map(
             (elem: any, indx: React.Key | null | undefined) => (
-              <Link href={elem.link}>
-                <DropdownLinks key={indx} >
+              <Link href={elem.link} passHref key={indx}>
+                <DropdownLinks  >
                   <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
                 </DropdownLinks>
               </Link>
@@ -121,10 +121,9 @@ const Dropdown = (props: {
         <DropdownButtons>
           {props.HeaderButtonData.map(
             (elem: any, indx: React.Key | null | undefined) => (
-              <Link href={elem.link} passHref>
+              <Link key={indx} href={elem.link} passHref>
                 <Button
                   $big={true}
-                  key={indx}
                   $reverse={elem.reverse}
                   onClick={(): void => props.toggle(Menu)}
                 >

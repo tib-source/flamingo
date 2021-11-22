@@ -161,7 +161,7 @@ const Menu = () => {
             <hr />
             <button onClick={handleFilter}>Kids</button>
             <hr />
-            <button onClick={handleFilter}>Chef's Special</button>
+            <button onClick={handleFilter}>Chef&apos;s Special</button>
             <hr />
             <button onClick={handleFilter}>Rice</button>
             <hr />
@@ -178,9 +178,9 @@ const Menu = () => {
             <button onClick={handleFilter}>Appetizer</button>
           </Filter>
           <Food>
-            {Menu.map((food) =>
+            {Menu.map((food, index) =>
             (
-              <Card
+              <Card key={index}
                 data-aos-anchor-placement="top-bottom"
                 data-aos="zoom-in"
                 data-aos-duration="500"

@@ -3,7 +3,7 @@ import { Button } from "../Util/Button";
 import { FaBars } from "react-icons/fa";
 import { HeaderDataType } from "../types";
 import styled, { css } from "styled-components";
-import  Link  from "next/link";
+import Link from "next/link";
 import { Color } from "../../data/Color";
 
 const HeaderWrapper = styled.div`
@@ -94,37 +94,37 @@ const Header = (props: {
   HeaderButtonData: any[];
 }) => {
   return (
-      <HeaderWrapper>
-        <Link href="/" passHref>
-          <Icon>
-              <h2>FLAMINGO</h2>
-              <small>Shepherd Bush</small>
-          </Icon>
-        </Link>
-        <Hamburger onClick={props.toggle}>
-          <FaBars />
-        </Hamburger>
-        <HeaderContent>
-          {props.HeaderData.map((elem, indx: React.Key | null | undefined) => (
-            <Link href={elem.link} passHref>
-              <HeaderLinks key={indx}>
+    <HeaderWrapper>
+      <Link href="/" passHref>
+        <Icon>
+          <h2>FLAMINGO</h2>
+          <small>Shepherd Bush</small>
+        </Icon>
+      </Link>
+      <Hamburger onClick={props.toggle}>
+        <FaBars />
+      </Hamburger>
+      <HeaderContent>
+        {props.HeaderData.map((elem, indx: React.Key | null | undefined) => (
+          <Link href={elem.link} key={indx} passHref>
+            <HeaderLinks >
+              {elem.title}
+            </HeaderLinks>
+          </Link>
+        ))}
+      </HeaderContent>
+      <HeaderButtons>
+        {props.HeaderButtonData.map(
+          (elem, indx: React.Key | null | undefined) => (
+            <Link href={elem.link} key={indx} passHref>
+              <Button $reverse={elem.reverse}>
                 {elem.title}
-              </HeaderLinks>
+              </Button>
             </Link>
-          ))}
-        </HeaderContent>
-        <HeaderButtons>
-          {props.HeaderButtonData.map(
-            (elem, indx: React.Key | null | undefined) => (
-              <Link href={elem.link} passHref>
-                <Button key={indx} $reverse={elem.reverse}>
-                  {elem.title}
-                </Button>
-              </Link>
-            )
-          )}
-        </HeaderButtons>
-      </HeaderWrapper>
+          )
+        )}
+      </HeaderButtons>
+    </HeaderWrapper>
   );
 };
 

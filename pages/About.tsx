@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Color } from "../data/Color";
 import { aboutUs } from "../data/AboutUsData";
 import Meta from "../components/Meta";
+import Image from 'next/image'
+
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
@@ -52,7 +54,7 @@ const About = () => {
             ))}
           </Content>
 
-          <img src={aboutUs.image} alt="flamingo restaurant interiour" />
+          <Image src={aboutUs.image} alt="flamingo restaurant interiour" />
         </Wrapper>
       </Container>
     </div>

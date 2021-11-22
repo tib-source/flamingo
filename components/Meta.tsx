@@ -1,7 +1,7 @@
 import Head from "next/head"
-const Meta: React.FC<any> = ({title, keywords, description}) => { 
+const Meta: React.FC<any> = ({ title, keywords, description }) => {
   return (
-    <Head> 
+    <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
@@ -10,18 +10,13 @@ const Meta: React.FC<any> = ({title, keywords, description}) => {
       <title>{title}</title>
       <link rel="manifest" href="/manifest.json" />
       {/* <!-- Poppins Font --> */}
-      <link  rel="preconnect" href="https://fonts.googleapis.com" />
-      <link  rel="preconnect" href="https://fonts.gstatic.com"  />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,900&display=swap"
-        rel="stylesheet"
-      />
+
     </Head>
   )
 
 }
 
-Meta.defaultProps = { 
+Meta.defaultProps = {
   title: "Flamingo Restaurant & Cafe",
   keywords: "Flamingo Restaurant, Flamingo Cafe, Ethiopian Food, HammerSmith Ethiopian, Shepherd Bush Ethiopian",
   description: "Welcome to Our Restaurant. Ethiopian cuisine (Amharic: የኢትዮጵያ ምግብ?) characteristically consists of vegetable and often very spicy meat dishes."

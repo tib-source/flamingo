@@ -54,8 +54,8 @@ const Gallery = () => {
       <Container>
         <h2>Our Random Gallery </h2>
         <StyledGallery>
-          {ImageList.map((image) => (
-            <Image src={image} alt="gallery" />
+          {ImageList.map((image, index) => (
+            <Image key={index} src={image} alt="gallery" />
           ))}
         </StyledGallery>
       </Container>

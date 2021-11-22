@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { flex } from "../Util/flex";
-const Container = styled(flex)`
+
+
+
+const Container = styled(flex) <{ width: string }>`
   gap: 1rem;
   p {
     padding: 0;
@@ -21,7 +24,7 @@ const Container = styled(flex)`
     border-radius: 10px;
   }
 `;
-const RangeInput = ({ count, value }) => {
+const RangeInput = ({ count, value }: { count: number, value: string }) => {
   return (
     <Container width={value}>
       <p>{count} star</p>

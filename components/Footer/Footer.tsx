@@ -102,8 +102,8 @@ const Footer = (props: { HeaderData: HeaderDataType[] }) => {
           <HeaderContent>
             {props.HeaderData.map(
               (elem: HeaderDataType, indx: React.Key | null | undefined) => (
-                <Link href={elem.link} passHref>
-                  <HeaderLinks key={indx} >
+                <Link href={elem.link} key={indx} passHref>
+                  <HeaderLinks >
                     {elem.title}
                   </HeaderLinks>
                 </Link>
