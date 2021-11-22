@@ -1,4 +1,6 @@
-export const HeaderData = [
+import { HeaderDataType } from "../components/types";
+
+export const HeaderData: HeaderDataType[] = [
   {
     title: "Home",
     link: "/",

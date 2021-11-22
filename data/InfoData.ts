@@ -1,8 +1,9 @@
-import ImageTwo from "./../images/Injera-2-min.jpg";
-import ImageOne from "./../images/Injera-1-min.jpg";
+import ImageTwo from "../public/images/Injera-2-min.jpg";
+import ImageOne from "../public/images/Injera-1-min.jpg";
 import { Color } from "./Color";
+import { InfoType } from "../components/types";
 
-export const InfoData = [
+export const InfoData: InfoType[] = [
   {
     title: "Welcome to Our Restaurant",
     paragraphs: [

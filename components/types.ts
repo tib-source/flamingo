@@ -1,22 +1,25 @@
-export type HeaderType = {
+export interface HeroDataType{
   title: string;
   paragraph: string;
   button: boolean;
   buttonLabel: string;
   buttonPath: string;
-  image: string;
+  image: StaticImageData;
   background: string;
 };
-
-export type InfoType = Readonly<{
+export interface HeaderDataType {
+  title: string;
+  link: string;
+};
+export interface InfoType{
   title: string;
   paragraphs: string[];
   button: boolean;
   buttonLabel: string;
   buttonPath: string;
   reverse: boolean;
+  image: StaticImageData;
   color: string;
-  image: string;
   alt: string;
   font: string;
-}>;
+};

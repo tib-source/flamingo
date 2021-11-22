@@ -5,7 +5,7 @@ import { Color } from "../../data/Color";
 import { flex } from "../Util/flex";
 import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from "../Util/Button";
-import { HeaderType } from "../types";
+import { HeaderDataType } from "../types";
 const Container = styled(flex)`
   width: 100%;
   background: ${Color.black};
@@ -80,7 +80,7 @@ export const NavLink = css`
 export const HeaderLinks = styled(Link)`
   ${NavLink}
 `;
-const Footer = (props: { HeaderData: HeaderType[] }) => {
+const Footer = (props: { HeaderData: HeaderDataType[] }) => {
   return (
     <Container>
       <Wrapper>
@@ -100,11 +100,13 @@ const Footer = (props: { HeaderData: HeaderType[] }) => {
         </Top>
         <Bottom>
           <HeaderContent>
-            {props.HeaderData.map((elem: HeaderType, indx: number) => (
-              <HeaderLinks key={indx} href={elem.link}>
-                {elem.title}
-              </HeaderLinks>
-            ))}
+            {props.HeaderData.map(
+              (elem: HeaderDataType, indx: React.Key | null | undefined) => (
+                <HeaderLinks key={indx} href={elem.link}>
+                  {elem.title}
+                </HeaderLinks>
+              )
+            )}
           </HeaderContent>
           <Button $reverse={true} to="/book">
             Book A Table

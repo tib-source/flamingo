@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
-import Background from "./../../images/background-min.jpg";
+import Background from "../../public/images/background-min.jpg";
 
 const HeroContainer = styled.section`
   width: 100%;
@@ -16,12 +16,14 @@ const HeroContainer = styled.section`
     height: 80vh;
   }
 `;
-
-const BG = styled.div`
+type styledType = { 
+  Background? : StaticImageData;
+}
+const BG = styled.div<styledType>`
   position: absolute;
   top: -10vh;
   left: 0;
-  background: url(${Background}) no-repeat center;
+  background: url(${{Background}}) no-repeat center;
   width: 100%;
   height: 100vh;
 
@@ -103,7 +105,7 @@ const Hero = () => {
   const title = useRef(null);
   return (
     <HeroContainer>
-      <BG></BG>
+      <BG Background={Background}></BG>
       <Wrapper>
         <Content>
           <Text>
@@ -115,10 +117,10 @@ const Hero = () => {
             </p>
           </Text>
           <CTAButtons>
-            <Button to="/menu" $big data-aos="fade-right" data-aos-offset="300">
+            <Button href="/menu" $big data-aos="fade-right" data-aos-offset="300">
               Menu
             </Button>
-            <Button to="/book" $big data-aos="fade-left" data-aos-offset="300">
+            <Button href="/book" $big data-aos="fade-left" data-aos-offset="300">
               Book A Table
             </Button>
           </CTAButtons>

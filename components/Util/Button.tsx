@@ -1,7 +1,13 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Color } from "../../data/Color";
-export const Button = styled(Link)`
+
+type ButtonType = { 
+  $reverse?: boolean
+  $big? : boolean
+}
+
+export const Button = styled(Link)<ButtonType>`
   padding: 0.5rem 1rem;
   background-color: ${({ $reverse }) =>
     $reverse === true ? "transparent" : Color.lightBlack};

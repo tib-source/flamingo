@@ -1,5 +1,6 @@
 import { createGlobalStyle, keyframes } from "styled-components";
-import { Color } from "./../data/Color";
+import { Color } from "../data/Color";
+
 const fadeOutMenu = keyframes`
   0%{
     transform: translateX(0px);

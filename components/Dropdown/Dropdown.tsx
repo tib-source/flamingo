@@ -1,4 +1,3 @@
-import {} from "styled-components/cssprop";
 import React, { useRef } from "react";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
@@ -95,16 +94,6 @@ export const Icon = styled.div`
   }
 `;
 
-type HeaderType = {
-  title: string;
-  paragraph: string;
-  button: boolean;
-  buttonLabel: string;
-  buttonPath: string;
-  image: string;
-  background: string;
-};
-
 const Dropdown = (props: {
   toggle: any;
   HeaderData: object[];
@@ -118,24 +107,28 @@ const Dropdown = (props: {
       </Icon>
       <DropdownMenu>
         <DropdownContent>
-          {props.HeaderData.map((elem: any, indx) => (
-            <DropdownLinks key={indx} href={elem.link}>
-              <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
-            </DropdownLinks>
-          ))}
+          {props.HeaderData.map(
+            (elem: any, indx: React.Key | null | undefined) => (
+              <DropdownLinks key={indx} href={elem.link}>
+                <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
+              </DropdownLinks>
+            )
+          )}
         </DropdownContent>
         <hr />
         <DropdownButtons>
-          {props.HeaderButtonData.map((elem: any, indx) => (
-            <Button
-              $big={true}
-              key={indx}
-              $reverse={elem.reverse}
-              href={elem.link}
-            >
-              <a onClick={(): void => props.toggle(Menu)}>{elem.title}</a>
-            </Button>
-          ))}
+          {props.HeaderButtonData.map(
+            (elem: any, indx: React.Key | null | undefined) => (
+              <Button
+                $big={true}
+                key={indx}
+                $reverse={elem.reverse}
+                href={elem.link}
+              >
+                <a onClick={(): void => props.toggle(Menu)}>{elem.title}</a>
+              </Button>
+            )
+          )}
         </DropdownButtons>
       </DropdownMenu>
     </DropdownWrapper>

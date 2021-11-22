@@ -4,7 +4,7 @@ import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
 import { InfoType } from "../types";
-
+import Image from 'next/image'
 interface styleType {
   reverse?: boolean;
   font?: string;
@@ -68,7 +68,7 @@ const Wrapper = styled(flex)<styleType>`
   }
 `;
 
-const InfoSection = ({ info }: { info: InfoType }) => {
+const InfoSection = ({ info } : {info: InfoType}) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
@@ -83,14 +83,14 @@ const InfoSection = ({ info }: { info: InfoType }) => {
               return index <= 5 && <p key={index}>{para}</p>;
             })}
             {info.button && (
-              <Button to={info.buttonPath} $reverse={info.reverse}>
+              <Button href={info.buttonPath} $reverse={info.reverse}>
                 {info.buttonLabel}
               </Button>
             )}
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <img src={info.image} alt={info.alt} />
+          <Image src={info.image} alt={info.alt} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>
