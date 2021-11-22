@@ -6,7 +6,14 @@ import { BsStarHalf } from "react-icons/bs";
 import { BsStar } from "react-icons/bs";
 import { Color } from "../../data/Color";
 import RangeInput from "./RangeInput";
-const Container = styled(flex)`
+
+type styledType = {
+  font?: string
+  rating?: string | undefined | boolean
+}
+
+
+const Container = styled(flex) <styledType>`
   padding: 2rem;
   background-color: ${({ color }) => (color ? color : Color.red)};
   color: ${({ font }) => (font ? font : Color.black)};
@@ -66,7 +73,7 @@ const CardCont = styled(flex)`
   flex-direction: column;
   gap: 2rem;
 `;
-const Stars = styled(flex)`
+const Stars = styled(flex) <styledType>`
   padding: ${(props) => (props.rating ? "0rem" : "1.25rem")};
   margin: 0.25rem;
   background: ${Color.gray};
@@ -127,23 +134,33 @@ const User = styled.div`
     margin-bottom: 0;
   }
 `;
-const Review = ({ reviews }) => {
-  const [average, setAverage] = useState(5);
+
+interface REVIEW {
+  title: string,
+  date: string,
+  rating: string,
+  review: string,
+  profile: string
+}
+const Review = ({ reviews }: { reviews: REVIEW[] }) => {
+  const [average, setAverage] = useState<string | number>(5);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     setTotal(reviews.length);
     let sum = 0;
-    reviews.forEach((elem) => (sum += parseInt(elem.rating)));
+    reviews.forEach(function (elem: REVIEW): number {
+      return (sum += parseInt(elem.rating));
+    });
     const mean = (sum / 10 / reviews.length).toFixed(1);
     setAverage(mean);
   }, [reviews, setAverage, setTotal]);
 
-  const reviewStars = (value, rating) => {
+  const reviewStars = (value: string, rating: boolean) => {
     return (
       <Stars rating={rating}>
         <StarGroup>
-          {displayStars(value, rating).map((elem, index) =>
+          {displayStars(parseInt(value), rating).map((elem, index) =>
             elem ? (
               <Yellow key={index} />
             ) : elem === null ? (
@@ -153,17 +170,17 @@ const Review = ({ reviews }) => {
             )
           )}
         </StarGroup>
-        {rating ? `${value / 10} out of 5` : `${average} out of 5`}
+        {rating ? `${parseInt(value) / 10} out of 5` : `${average} out of 5`}
       </Stars>
     );
   };
-  function calculateReviewPercentage(rating) {
+  function calculateReviewPercentage(rating: string) {
     return (
       (reviews.filter((review) => review.rating === rating).length / total) *
       100
     ).toFixed(0);
   }
-  function displayStars(value, rating) {
+  function displayStars(value: number, rating: boolean) {
     let mean = value;
     if (rating) {
       mean = value / 10;
@@ -178,7 +195,7 @@ const Review = ({ reviews }) => {
     }
     return stars;
   }
-  function truncateString(str, num) {
+  function truncateString(str: string, num: number) {
     if (str.length > num) {
       return str.slice(0, num) + "...";
     } else {
@@ -192,7 +209,7 @@ const Review = ({ reviews }) => {
           <CardCont data-aos="fade-in" data-aos-duration="300">
             <Group>
               <h2>Customer Reviews</h2>
-              {reviewStars(average, false)}
+              {reviewStars(average.toString(), false)}
               <small>{total} customer ratings</small>
             </Group>
             <InputGroup>
