@@ -1,9 +1,9 @@
 import React from "react";
-import Title from "../../components/Title/Title";
-import { flex } from "../../components/Util/flex";
+import Title from "../components/Title/Title";
+import { flex } from "../components/Util/flex";
 import styled from "styled-components";
-import { Color } from "../../data/Color";
-import { aboutUs } from "../../data/AboutUsData";
+import { Color } from "../data/Color";
+import { aboutUs } from "../data/AboutUsData";
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};

@@ -4,7 +4,6 @@ import Meta from './Meta'
 import AOS from "aos";
 import { HeaderData, HeaderButtonData } from "../data/HeaderData";
 import Dropdown from './Dropdown/Dropdown';
-import { GlobalStyle } from './globalStyle';
 import Footer from "./Footer/Footer";
 
 
@@ -41,8 +40,6 @@ const Layout:React.FC = ({children}) => {
           </div>
         }
       > */}
-        <GlobalStyle />
-        
       <Meta /> 
       <Header
           toggle={toggle}

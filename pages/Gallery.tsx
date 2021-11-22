@@ -1,15 +1,15 @@
 import React from "react";
-import Title from "../../components/Title/Title";
-import ImageOne from "../../images/background.jpg";
-import ImageTwo from "../../images/Injera-1.jpg";
-import ImageThree from "../../images/Injera-2.jpg";
-import ImageFour from "../../images/inside.jpg";
-import ImageFive from "../../images/kitfo.jpg";
-import ImageSix from "../../images/Cake.jpg";
-import { flex } from "../../components/Util/flex";
+import Title from "../components/Title/Title";
+import ImageOne from "../public/images/background.jpg";
+import ImageTwo from "../public/images/Injera-1.jpg";
+import ImageThree from "../public/images/Injera-2.jpg";
+import ImageFour from "../public/images/inside.jpg";
+import ImageFive from "../public/images/kitfo.jpg";
+import ImageSix from "../public/images/Cake.jpg";
+import { flex } from "../components/Util/flex";
 import styled from "styled-components";
-import { Color } from "../../data/Color";
-
+import { Color } from "../data/Color";
+import Image from 'next/image'
 const Container = styled(flex)`
   padding: 5rem;
   flex-flow: column;
@@ -52,7 +52,7 @@ const Gallery = () => {
         <h2>Our Random Gallery </h2>
         <StyledGallery>
           {ImageList.map((image) => (
-            <img src={image} alt="gallery" />
+            <Image src={image} alt="gallery" />
           ))}
         </StyledGallery>
       </Container>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
-import Title from "../../components/Title/Title";
-import { flex } from "../../components/Util/flex";
-import { MapApiKey } from "../../data/constants";
-import { Color } from "../../data/Color";
+import Title from "../components/Title/Title";
+import { flex } from "../components/Util/flex";
+import { MapApiKey } from "../data/constants";
+import { Color } from "../data/Color";
 import { BsArrowRight } from "react-icons/bs";
 const Container = styled(flex)`
   flex-flow: column;

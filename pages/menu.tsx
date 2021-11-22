@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Title from "../../components/Title/Title";
-import { MenuData } from "../../data/Menu";
+import Title from "../components/Title/Title";
+import { MenuData } from "../data/Menu";
+import Image from 'next/image'
 import {
   containerCss,
   contentCss,
   wrapperCss,
-} from "../../components/Util/css";
-import { flex } from "../../components/Util/flex";
-import { Color } from "./../../data/Color";
-import Kitfo from "./../../images/kitfo.jpg";
+} from "../components/Util/css";
+import { flex } from "../components/Util/flex";
+import { Color } from "../data/Color";
+import Kitfo from "../public/images/kitfo.jpg";
 
 const Container = styled(flex)`
   ${containerCss}
@@ -133,7 +134,7 @@ const Menu = () => {
   const Orignial = MenuData;
   const [Menu, setMenu] = useState(MenuData);
 
-  const handleFilter = (event) => {
+  const handleFilter: React.ChangeEventHandler<any> = (event) => {
     const filterTag = event.target.innerText;
     console.log(filterTag);
     const filteredMenu = Orignial.filter((item) =>
@@ -174,19 +175,15 @@ const Menu = () => {
             <button onClick={handleFilter}>Appetizer</button>
           </Filter>
           <Food>
-            {Menu.map((food) => {
-              console.log(Menu);
-              if (Menu === "") {
-                return "meow";
-              } else {
-                return (
+            {Menu.map((food) => 
+                 (
                   <Card
                     data-aos-anchor-placement="top-bottom"
                     data-aos="zoom-in"
                     data-aos-duration="500"
                   >
                     <div className="bg">
-                      <img src={Kitfo} alt="" srcset="" />
+                      <Image src={Kitfo} alt={food.name} />
                     </div>
                     <div className="info">
                       <h5 className="name">{food.name}</h5>
@@ -194,9 +191,8 @@ const Menu = () => {
                       <h5 className="price">£{food.price}</h5>
                     </div>
                   </Card>
-                );
-              }
-            })}
+                )
+            )}
           </Food>
         </Wrapper>
       </Container>

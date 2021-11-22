@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Color } from "../../data/Color";
-import Background from "./../../images/background-min.jpg";
 
 const Container = styled.section`
   width: 100%;
@@ -16,7 +15,7 @@ const BG = styled.div`
   position: absolute;
   top: -10vh;
   left: 0;
-  background: url(${Background}) no-repeat center;
+  background: url("../images/background-min.jpg") no-repeat center;
   width: 100%;
   height: 40vh;
 
@@ -48,7 +47,7 @@ const Wrapper = styled.div`
     filter: drop-shadow(3px 3px 1px ${Color.orange});
   }
 `;
-const Title = (props) => {
+const Title = (props: {title:string}) => {
   return (
     <Container>
       <BG></BG>

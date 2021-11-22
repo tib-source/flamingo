@@ -1,9 +1,9 @@
 import React from "react";
-import Title from "../../components/Title/Title";
+import Title from "../components/Title/Title";
 import styled from "styled-components";
-import { Color } from "../../data/Color";
-import { flex } from "../../components/Util/flex";
-import { wrapperCss, heightCss } from "../../components/Util/css";
+import { Color } from "../data/Color";
+import { flex } from "../components/Util/flex";
+import { wrapperCss, heightCss } from "../components/Util/css";
 import { BsArrowRight } from "react-icons/bs";
 const Container = styled(flex)`
   flex-flow: column;

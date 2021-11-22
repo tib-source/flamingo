@@ -108,7 +108,7 @@ const Footer = (props: { HeaderData: HeaderDataType[] }) => {
               )
             )}
           </HeaderContent>
-          <Button $reverse={true} to="/book">
+          <Button $reverse={true} href="/book">
             Book A Table
           </Button>
         </Bottom>

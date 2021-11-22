@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
-import Background from "../../public/images/background-min.jpg";
-
 const HeroContainer = styled.section`
   width: 100%;
   height: 90vh;
@@ -16,14 +14,12 @@ const HeroContainer = styled.section`
     height: 80vh;
   }
 `;
-type styledType = { 
-  Background? : StaticImageData;
-}
-const BG = styled.div<styledType>`
+
+const BG = styled.div`
   position: absolute;
   top: -10vh;
   left: 0;
-  background: url(${{Background}}) no-repeat center;
+  background: url("../images/background-min.jpg") no-repeat center;
   width: 100%;
   height: 100vh;
 
@@ -105,7 +101,7 @@ const Hero = () => {
   const title = useRef(null);
   return (
     <HeroContainer>
-      <BG Background={Background}></BG>
+      <BG></BG>
       <Wrapper>
         <Content>
           <Text>

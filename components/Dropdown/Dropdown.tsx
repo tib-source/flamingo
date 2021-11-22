@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { FaTimes } from "react-icons/fa";
-import { NavLink } from "../Header/HeaderStyle";
+import { NavLink } from "../Header/Header";
 import { Interface } from "readline";
 import { type } from "os";
 import { AnyRecord } from "dns";
