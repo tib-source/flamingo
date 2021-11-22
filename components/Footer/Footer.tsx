@@ -1,11 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Link } from "next/link";
+import Link from "next/link";
 import { Color } from "../../data/Color";
 import { flex } from "../Util/flex";
 import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from "../Util/Button";
-
+import { HeaderType } from "../types";
 const Container = styled(flex)`
   width: 100%;
   background: ${Color.black};
@@ -80,7 +80,7 @@ export const NavLink = css`
 export const HeaderLinks = styled(Link)`
   ${NavLink}
 `;
-const Footer = (props) => {
+const Footer = (props: { HeaderData: HeaderType[] }) => {
   return (
     <Container>
       <Wrapper>
@@ -100,8 +100,8 @@ const Footer = (props) => {
         </Top>
         <Bottom>
           <HeaderContent>
-            {props.HeaderData.map((elem, indx) => (
-              <HeaderLinks key={indx} to={elem.link}>
+            {props.HeaderData.map((elem: HeaderType, indx: number) => (
+              <HeaderLinks key={indx} href={elem.link}>
                 {elem.title}
               </HeaderLinks>
             ))}

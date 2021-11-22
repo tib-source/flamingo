@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
+import { InfoType } from "../types";
 
 interface styleType {
   reverse?: boolean;
@@ -67,19 +68,6 @@ const Wrapper = styled(flex)<styleType>`
   }
 `;
 
-type InfoType = Readonly<{
-  title: string;
-  paragraphs: string[];
-  button: boolean;
-  buttonLabel: string;
-  buttonPath: string;
-  reverse: boolean;
-  color: string;
-  image: string;
-  alt: string;
-  font: string;
-}>;
-
 const InfoSection = ({ info }: { info: InfoType }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
@@ -91,7 +79,7 @@ const InfoSection = ({ info }: { info: InfoType }) => {
         >
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
-            {info.paragraphs.map((para, index) => {
+            {info.paragraphs.map((para, index: number) => {
               return index <= 5 && <p key={index}>{para}</p>;
             })}
             {info.button && (
