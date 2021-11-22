@@ -15,7 +15,7 @@ export const HeaderData: HeaderDataType[] = [
   },
   {
     title: "Gallery",
-    link: "/Gallery",
+    link: "/gallery",
   },
 ];
 

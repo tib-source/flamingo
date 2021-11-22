@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { Color } from "../../data/Color";
 
 type ButtonType = { 
@@ -7,7 +6,7 @@ type ButtonType = {
   $big? : boolean
 }
 
-export const Button = styled(Link)<ButtonType>`
+export const Button = styled.a<ButtonType>`
   padding: 0.5rem 1rem;
   background-color: ${({ $reverse }) =>
     $reverse === true ? "transparent" : Color.lightBlack};

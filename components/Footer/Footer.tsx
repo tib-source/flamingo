@@ -77,7 +77,7 @@ export const NavLink = css`
     color: ${Color.orange};
   }
 `;
-export const HeaderLinks = styled(Link)`
+export const HeaderLinks = styled.a`
   ${NavLink}
 `;
 const Footer = (props: { HeaderData: HeaderDataType[] }) => {
@@ -102,9 +102,11 @@ const Footer = (props: { HeaderData: HeaderDataType[] }) => {
           <HeaderContent>
             {props.HeaderData.map(
               (elem: HeaderDataType, indx: React.Key | null | undefined) => (
-                <HeaderLinks key={indx} href={elem.link}>
-                  {elem.title}
-                </HeaderLinks>
+                <Link href={elem.link} passHref>
+                  <HeaderLinks key={indx} >
+                    {elem.title}
+                  </HeaderLinks>
+                </Link>
               )
             )}
           </HeaderContent>

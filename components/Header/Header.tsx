@@ -17,7 +17,7 @@ height: 10vh;
 z-index: 15;
 `;
 
-const Icon = styled(Link)`
+const Icon = styled.a`
 text-decoration: none;
 display: flex;
 justify-content: center;
@@ -60,7 +60,7 @@ gap: 2rem;
   display: none;
 }
 `;
-const HeaderLinks = styled(Link)`
+const HeaderLinks = styled.a`
 ${NavLink}
 `;
 
@@ -95,28 +95,32 @@ const Header = (props: {
 }) => {
   return (
       <HeaderWrapper>
-        <Icon href="/">
-          <a>
-            <h2>FLAMINGO</h2>
-            <small>Shepherd Bush</small>
-          </a>
-        </Icon>
+        <Link href="/" passHref>
+          <Icon>
+              <h2>FLAMINGO</h2>
+              <small>Shepherd Bush</small>
+          </Icon>
+        </Link>
         <Hamburger onClick={props.toggle}>
           <FaBars />
         </Hamburger>
         <HeaderContent>
           {props.HeaderData.map((elem, indx: React.Key | null | undefined) => (
-            <HeaderLinks key={indx} href={elem.link}>
-              {elem.title}
-            </HeaderLinks>
+            <Link href={elem.link} passHref>
+              <HeaderLinks key={indx}>
+                {elem.title}
+              </HeaderLinks>
+            </Link>
           ))}
         </HeaderContent>
         <HeaderButtons>
           {props.HeaderButtonData.map(
             (elem, indx: React.Key | null | undefined) => (
-              <Button key={indx} $reverse={elem.reverse} href={elem.link}>
-                {elem.title}
-              </Button>
+              <Link href={elem.link} passHref>
+                <Button key={indx} $reverse={elem.reverse}>
+                  {elem.title}
+                </Button>
+              </Link>
             )
           )}
         </HeaderButtons>
