@@ -4,6 +4,7 @@ import { flex } from "../components/Util/flex";
 import styled from "styled-components";
 import { Color } from "../data/Color";
 import { aboutUs } from "../data/AboutUsData";
+import Meta from "../components/Meta";
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
@@ -40,6 +41,7 @@ const Content = styled(flex)`
 const About = () => {
   return (
     <div>
+      <Meta title="About Us | Flamingo Restaurant" />
       <Title title={aboutUs.title} />
       <Container>
         <Wrapper>

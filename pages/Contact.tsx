@@ -5,6 +5,8 @@ import { flex } from "../components/Util/flex";
 import { MapApiKey } from "../data/constants";
 import { Color } from "../data/Color";
 import { BsArrowRight } from "react-icons/bs";
+import Meta from "../components/Meta";
+
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
@@ -170,6 +172,7 @@ const Email = styled.div`
 const Contact = () => {
   return (
     <Container>
+      <Meta title="Contact | Flamingo Restaurant" />
       <Title title="Contact" />
       <Second>
         <PlaceHolder className="text">

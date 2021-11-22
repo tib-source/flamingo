@@ -5,6 +5,9 @@ import { Color } from "../data/Color";
 import { flex } from "../components/Util/flex";
 import { wrapperCss, heightCss } from "../components/Util/css";
 import { BsArrowRight } from "react-icons/bs";
+import Meta from "../components/Meta";
+
+
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
@@ -139,6 +142,7 @@ const Group = styled(flex)`
 const BookTable = () => {
   return (
     <Container>
+      <Meta title="Book a Table | Flamingo Restaurant" />
       <Title title="Book a Table" />
       <Second>
         <PlaceHolder className="text">

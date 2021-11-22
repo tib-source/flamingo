@@ -10,6 +10,8 @@ import { flex } from "../components/Util/flex";
 import styled from "styled-components";
 import { Color } from "../data/Color";
 import Image from 'next/image'
+import Meta from "../components/Meta";
+
 const Container = styled(flex)`
   padding: 5rem;
   flex-flow: column;
@@ -47,6 +49,7 @@ const StyledGallery = styled(flex)`
 const Gallery = () => {
   return (
     <div>
+      <Meta title="Gallery | Flamingo Restaurant" />
       <Title title="Gallery" />
       <Container>
         <h2>Our Random Gallery </h2>
