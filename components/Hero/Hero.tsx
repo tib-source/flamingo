@@ -19,7 +19,7 @@ const BG = styled.div`
   position: absolute;
   top: -10vh;
   left: 0;
-  background: url("../images/background-min.jpg") no-repeat center;
+  background: url("../images/background-min.avif") no-repeat center;
   width: 100%;
   height: 100vh;
 
