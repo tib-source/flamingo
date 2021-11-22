@@ -16,7 +16,7 @@ const Second = styled(flex)`
   ${wrapperCss}
   width: min(1000px, 90vw);
 
-  margin: 10rem;
+  margin: 5rem;
 `;
 const PlaceHolder = styled(flex)`
   ${heightCss}

@@ -44,10 +44,10 @@ const DropdownMenu = styled.div`
     opacity: 0.6;
   }
 `;
-const DropdownLinks = styled(Link)`
+const DropdownLinks = styled.a`
   ${NavLink}
   color: ${Color.black};
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
 `;
 const DropdownButtons = styled.div`
@@ -109,9 +109,11 @@ const Dropdown = (props: {
         <DropdownContent>
           {props.HeaderData.map(
             (elem: any, indx: React.Key | null | undefined) => (
-              <DropdownLinks key={indx} href={elem.link}>
-                <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
-              </DropdownLinks>
+              <Link href={elem.link}>
+                <DropdownLinks key={indx} >
+                  <a onClick={(): void => props.toggle(Menu)}>{elem.title} </a>
+                </DropdownLinks>
+              </Link>
             )
           )}
         </DropdownContent>
@@ -119,19 +121,21 @@ const Dropdown = (props: {
         <DropdownButtons>
           {props.HeaderButtonData.map(
             (elem: any, indx: React.Key | null | undefined) => (
-              <Button
-                $big={true}
-                key={indx}
-                $reverse={elem.reverse}
-                href={elem.link}
-              >
-                <a onClick={(): void => props.toggle(Menu)}>{elem.title}</a>
-              </Button>
+              <Link href={elem.link} passHref>
+                <Button
+                  $big={true}
+                  key={indx}
+                  $reverse={elem.reverse}
+                  onClick={(): void => props.toggle(Menu)}
+                >
+                  {elem.title}
+                </Button>
+              </Link>
             )
           )}
         </DropdownButtons>
       </DropdownMenu>
-    </DropdownWrapper>
+    </DropdownWrapper >
   );
 };
 
