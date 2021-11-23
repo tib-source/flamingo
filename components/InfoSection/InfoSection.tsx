@@ -71,7 +71,7 @@ const Wrapper = styled(flex) <styleType>`
   }
 `;
 
-const InfoSection = ({ info }: { info: InfoType }) => {
+const InfoSection = ({ info }: { info: any }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
@@ -82,9 +82,10 @@ const InfoSection = ({ info }: { info: InfoType }) => {
         >
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
-            {info.paragraphs.map((para, index: number) => {
+            {/* {info.paragraphs.map((para, index: number) => {
               return index <= 5 && <p key={index}>{para}</p>;
-            })}
+            })} */}
+            <p >{info.paragraph}</p>
             {info.button && (
               <Button href={info.buttonPath} $reverse={info.reverse}>
                 {info.buttonLabel}
@@ -93,7 +94,7 @@ const InfoSection = ({ info }: { info: InfoType }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <Image src={info.image} alt={info.alt} />
+          {/* <Image src={info.image} alt={info.alt} /> */}
         </InfoImage>
       </Wrapper>
     </InfoContainer>
