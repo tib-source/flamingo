@@ -10,20 +10,24 @@ import Image from 'next/image'
 const Container = styled(flex)`
   flex-flow: column;
   background: ${Color.white};
+  
 `;
 const Wrapper = styled(flex)`
   width: min(80%, 1000px);
-  margin: 10rem 0;
-
+  margin: 5rem 0;
+  @media screen and (max-width: 948px) {
+    flex-direction: column;
+  }
   h4 {
     font-size: 1.25rem;
   }
-  img {
+
+`;
+const StyledImage = styled(Image)`
     flex: 1;
     height: min(450px, 50vh);
     object-fit: cover;
-  }
-`;
+  `
 const Content = styled(flex)`
   align-items: flex-start;
   flex-direction: column;
@@ -35,7 +39,7 @@ const Content = styled(flex)`
   background: ${Color.white};
   height: 100%;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 948px) {
     padding: 0;
     padding-bottom: 2rem;
   }
@@ -54,7 +58,7 @@ const About = () => {
             ))}
           </Content>
 
-          <Image src={aboutUs.image} alt="flamingo restaurant interiour" />
+          <StyledImage src={aboutUs.image} width="500px" height={400} alt="flamingo restaurant interiour" priority />
         </Wrapper>
       </Container>
     </div>

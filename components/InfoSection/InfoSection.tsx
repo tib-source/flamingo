@@ -11,7 +11,7 @@ interface styleType {
   color?: string;
 }
 
-const InfoContainer = styled(flex)<styleType>`
+const InfoContainer = styled(flex) <styleType>`
   height: 600px;
   background-color: ${({ color }) => (color ? color : Color.white)};
   color: ${({ font }) => (font ? font : Color.black)};
@@ -47,7 +47,10 @@ const InfoImage = styled.div<styleType>`
     box-shadow: 5px 5px 1px ${Color.orange};
   }
 `;
-const TextWrapper = styled(flex)<styleType>`
+
+const StyledImage = styled(Image)`
+`
+const TextWrapper = styled(flex) <styleType>`
   gap: 1rem;
   flex-direction: column;
   text-align: justify;
@@ -60,7 +63,7 @@ const TextWrapper = styled(flex)<styleType>`
   }
 `;
 
-const Wrapper = styled(flex)<styleType>`
+const Wrapper = styled(flex) <styleType>`
   width: min(90vw, 1100px);
   gap: 2rem;
   @media screen and (max-width: 948px) {
@@ -68,7 +71,7 @@ const Wrapper = styled(flex)<styleType>`
   }
 `;
 
-const InfoSection = ({ info } : {info: InfoType}) => {
+const InfoSection = ({ info }: { info: InfoType }) => {
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
