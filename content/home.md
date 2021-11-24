@@ -8,20 +8,20 @@ infoData:
     buttonLabel: "Read More"
     buttonPath: "/about"
     reverse: false
-    color: "white"
-    image: "/images/Injera-1-min.jpg"
+    color: "#fefae0"
+    image: "/static/media/Injera-1-min.jpg"
     alt: "Picture of Ethiopian dish"
-    font: "black"
+    font: "#1B1A17"
   - paragraph: 'For those with pure food indulgence in mind, come next door and sate your desires with our ever changing internationally and seasonally inspired small plates. We love food, lots of different food, just like you.'
     title: Our Menu
     button: true
     buttonLabel: "Menu"
     buttonPath: "/menu"
     reverse: true
-    color: "black"
+    color: "#1B1A17"
     image: "/background.jpg"
     alt: "Picture of Ethiopian dish"
-    font: "white"
+    font: "#fefae0"
 ---
 Welcome to my awesome page about cats of the internet.
 
