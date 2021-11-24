@@ -55,7 +55,7 @@ const Gallery = () => {
         <h2>Our Random Gallery </h2>
         <StyledGallery>
           {ImageList.map((image, index) => (
-            <Image key={index} src={image} alt="gallery" />
+            <Image priority={true} loading="eager" key={index} src={image} alt="gallery" />
           ))}
         </StyledGallery>
       </Container>

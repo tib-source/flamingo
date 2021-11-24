@@ -70,8 +70,8 @@ const Wrapper = styled(flex) <styleType>`
     flex-direction: column;
   }
 `;
-
 const InfoSection = ({ info }: { info: any }) => {
+  console.log(info.image)
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
@@ -94,7 +94,7 @@ const InfoSection = ({ info }: { info: any }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          {/* <Image src={info.image} alt={info.alt} /> */}
+          <Image layout='fill' src={info.image} alt={info.alt} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>
