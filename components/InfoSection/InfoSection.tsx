@@ -4,7 +4,6 @@ import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
 import { InfoType } from "../types";
-import Image from 'next/image'
 interface styleType {
   reverse?: boolean;
   font?: string;
@@ -39,16 +38,14 @@ const InfoImage = styled.div<styleType>`
   @media screen and (max-width: 948px) {
     order: 2;
   }
-  img {
+`;
+
+const StyledImage = styled.img`
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 1rem;
     box-shadow: 5px 5px 1px ${Color.orange};
-  }
-`;
-
-const StyledImage = styled(Image)`
 `
 const TextWrapper = styled(flex) <styleType>`
   gap: 1rem;
@@ -94,7 +91,7 @@ const InfoSection = ({ info }: { info: any }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <Image layout='fill' src={info.image} alt={info.alt} />
+          <StyledImage src={info.image} alt={info.alt} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>

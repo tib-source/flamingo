@@ -9,7 +9,7 @@ infoData:
     buttonPath: "/about"
     reverse: false
     color: "#fefae0"
-    image: "/static/media/Injera-1-min.jpg"
+    image: "/images/Injera-1-min.jpg"
     alt: "Picture of Ethiopian dish"
     font: "#1B1A17"
   - paragraph: 'For those with pure food indulgence in mind, come next door and sate your desires with our ever changing internationally and seasonally inspired small plates. We love food, lots of different food, just like you.'
@@ -19,7 +19,7 @@ infoData:
     buttonPath: "/menu"
     reverse: true
     color: "#1B1A17"
-    image: "/background.jpg"
+    image: "/images/Injera-2-min.jpg"
     alt: "Picture of Ethiopian dish"
     font: "#fefae0"
 ---
