@@ -10,7 +10,6 @@ const Meta: React.FC<any> = ({ title, keywords, description }) => {
       <title>{title}</title>
       <link rel="manifest" href="/manifest.json" />
       {/* <!-- Poppins Font --> */}
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     </Head>
   )
