@@ -28,3 +28,11 @@ collections:
             - { label: "Image", name: "image", widget: "image"}
             - { label: "Alt", name: "alt", widget: "string"}
             - { label: "Font", name: "font", widget: "color", allowInput: true}
+    - label: "About"
+      name: "About Us"
+      file: "content/about.md"
+      fields: 
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Paragraph", name: "paragraph", widget: "string"}
+        - { label: "Image", name: "image", widget: "image"}
+            
