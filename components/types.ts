@@ -1,3 +1,4 @@
+
 export interface HeroDataType{
   title: string;
   paragraph: string;
@@ -23,3 +24,5 @@ export interface InfoType{
   alt: string;
   font: string;
 };
+
+

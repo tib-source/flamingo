@@ -77,7 +77,8 @@ const PlaceHolder = styled(flex)`
       transition: 400ms ease-in;
       color: ${Color.gray};
       &:hover {
-        color: red;
+        color: ${Color.red};
+        background: ${Color.red}
       }
     }
   }
