@@ -137,14 +137,14 @@ const Card = styled.div`
 
 const Menu = () => {
   type MenuList = MenuItem[]
-  const { title , MenuData }: {title: string, MenuData: MenuList} = attributes
+  const { title, MenuData }: { title: string, MenuData: MenuList } = attributes
 
   const Orignial = MenuData;
   const [Menu, setMenu] = useState<MenuList>(MenuData)
 
   const handleFilter: React.ChangeEventHandler<any> = (event) => {
-    const filterTag:string = event.target.innerText;
-    const filteredMenu = Orignial.filter((item:MenuItem) =>
+    const filterTag: string = event.target.innerText;
+    const filteredMenu = Orignial.filter((item: MenuItem) =>
       item.tag.includes(filterTag)
     );
 
@@ -161,6 +161,7 @@ const Menu = () => {
       <Container>
         <Wrapper>
           <h4>Meals</h4>
+          {/*  TODO: change this ugle wall of code to an array. name it ... menuFilterList or sth idk */}
           <Filter>
             <button onClick={handleFilter}>All</button>
             <hr />
@@ -183,7 +184,7 @@ const Menu = () => {
             <button onClick={handleFilter}>Appetizer</button>
           </Filter>
           <Food>
-            {Menu.map((food:MenuItem, index:React.Key) =>
+            {Menu.map((food: MenuItem, index: React.Key) =>
             (
               <Card key={index}
                 data-aos-anchor-placement="top-bottom"

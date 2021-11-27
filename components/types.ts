@@ -1,5 +1,5 @@
 
-export interface HeroDataType{
+export interface HeroDataType {
   title: string;
   paragraph: string;
   button: boolean;
@@ -12,7 +12,7 @@ export interface HeaderDataType {
   title: string;
   link: string;
 };
-export interface InfoType{
+export interface InfoType {
   title: string;
   paragraphs: string[];
   button: boolean;
@@ -26,10 +26,18 @@ export interface InfoType{
 };
 
 
-export interface MenuItem { 
+export interface MenuItem {
   name: string,
   description: string,
   price: number,
   tag: string[],
   image: string
+}
+
+export interface reviewItem {
+  title: string;
+  date: string;
+  rating: string;
+  review: string;
+  profile: string;
 }
