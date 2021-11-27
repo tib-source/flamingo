@@ -26,3 +26,10 @@ export interface InfoType{
 };
 
 
+export interface MenuItem { 
+  name: string,
+  description: string,
+  price: number,
+  tag: string[],
+  image: string
+}
