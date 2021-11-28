@@ -1,11 +1,10 @@
 ---
-
 title: review
 reviews:
 	- title: AfricanSunset77
 	  date: 17 January 2020
 	  rating: 50
-	  review: I was taken to this restaurant by a friend of mine who is Eritrean and as I had never had Ethiopian/Eritrean food. This is a lovely little restaurant that has seating as you walk in and then downstairs there is a load more seating. As...More
+	  review: "I was taken to this restaurant by a friend of mine who is Eritrean and as I had never had Ethiopian/Eritrean food. This is a lovely little restaurant that has seating as you walk in and then downstairs there is a load more seating. As...More" 
 	  profile: https://media-cdn.tripadvisor.com/media/photo-l/13/1f/ed/28/africansunset77.jpg
 	- title: LeenaD110
 	  date: 29 December 2018
