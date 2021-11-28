@@ -14,25 +14,32 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Flamingo Restaurant'
-          name: "infoData"
-          widget: list
-          fields:
-            - { label: "Title", name: "title", widget: "string"}
-            - { label: "Paragraph", name: "paragraph", widget: "text"}
-            - { label: "Button", name: "button", widget: "boolean"}
-            - { label: "ButtonLabel", name: "buttonLabel", widget: "string"}
-            - { label: "ButtonPath", name: "buttonPath", widget: "string"}
-            - { label: "Reverse", name: "reverse", widget: "boolean"}
-            - { label: "Color", name: "color", widget: "color", allowInput: true}
-            - { label: "Image", name: "image", widget: "image"}
-            - { label: "Alt", name: "alt", widget: "string"}
-            - { label: "Font", name: "font", widget: "color", allowInput: true}
+    - label: 'Flamingo Restaurant'
+      name: "infoData"
+      widget: list
+      fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Paragraph", name: "paragraph", widget: "text"}
+        - { label: "Button", name: "button", widget: "boolean"}
+        - { label: "ButtonLabel", name: "buttonLabel", widget: "string"}
+        - { label: "ButtonPath", name: "buttonPath", widget: "string"}
+        - { label: "Reverse", name: "reverse", widget: "boolean"}
+        - { label: "Color", name: "color", widget: "color", allowInput: true}
+        - { label: "Image", name: "image", widget: "image"}
+        - { label: "Alt", name: "alt", widget: "string"}
+        - { label: "Font", name: "font", widget: "color", allowInput: true}
     - label: "About"
       name: "About Us"
       file: "content/about.md"
       fields: 
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Paragraph", name: "paragraph", widget: "string"}
-        - { label: "Image", name: "image", widget: "image"}
-            
+        - { label: "Image", name: "image", widget: "image"}   
+    - label: "Hero"
+      name: "Hero Page"
+      file: "content/hero.md"
+      fields: 
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Paragraph", name: "paragraph", widget: "text"}
+        - { label: "ButtonLabel", name: "buttonLabel", widget: "list"}
+        - { label: "ButtonPath", name: "buttonPath", widget: "list"}
