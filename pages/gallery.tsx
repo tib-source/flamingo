@@ -55,7 +55,8 @@ const Gallery = () => {
         <h2>Our Random Gallery </h2>
         <StyledGallery>
           {ImageList.map((image, index) => {
-            return <Image key={index} src={image.src} alt="gallery image"></Image>
+            // eslint-disable-next-line @next/next/no-img-element
+            return <img key={index} src={image.src} alt="gallery image"></img>
           })}
         </StyledGallery>
       </Container>
