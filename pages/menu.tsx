@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Title from "../components/Title/Title";
-// import { MenuData } from "../data/Menu";
+import { MenuData } from "../data/Menu";
 import Image from 'next/image'
 import {
   containerCss,
@@ -12,7 +12,7 @@ import { flex } from "../components/Util/flex";
 import { Color } from "../data/Color";
 import Kitfo from "../public/images/kitfo.jpg";
 import Meta from "../components/Meta";
-import { attributes } from "./../content/menu.md";
+// import { attributes } from "./../content/menu.md";
 import { MenuItem } from "../components/types";
 
 const Container = styled(flex)`
@@ -137,7 +137,7 @@ const Card = styled.div`
 
 const Menu = () => {
   type MenuList = MenuItem[]
-  const { title, MenuData }: { title: string, MenuData: MenuList } = attributes
+  // const { title, MenuData }: { title: string, MenuData: MenuList } = attributes
 
   const Orignial = MenuData;
   const [Menu, setMenu] = useState<MenuList>(MenuData)

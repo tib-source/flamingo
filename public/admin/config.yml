@@ -2,20 +2,15 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "public/images"
-public_folder: "images/"
+public_folder: "/images"
 collections:
-  - name: "pages"
+  - name: "Pages"
     label: "Pages"
+    delete: false
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
     - label: 'Flamingo Restaurant'
       name: "infoData"
+      file: "content/home.md"
       widget: list
       fields:
         - { label: "Title", name: "title", widget: "string"}
