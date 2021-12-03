@@ -43,11 +43,8 @@ collections:
       file: "content/menu.md"
       widget: "list"
       fields: 
-        - name: "Menu Item"
-        - label: "Menu Item"
-        - fields: 
-          - { label: "Name", name: "name", widget: "string"}
-          - { label: "Description", name: "description", widget: "string", default: ""}
-          - { label: "Price", name: "price", widget: "number", step: 0.01}
-          - { label: "Tag", name: "tag", widget: "list"}
-          - { label: "Image", name: "image", widget: "image"}
+        - { label: "Name", name: "name", widget: "string"}
+        - { label: "Description", name: "description", widget: "string", default: ""}
+        - { label: "Price", name: "price", widget: "number", step: 0.01}
+        - { label: "Tag", name: "tag", widget: "list"}
+        - { label: "Image", name: "image", widget: "image"}
