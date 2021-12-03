@@ -58,7 +58,7 @@ const About = () => {
             ))}
           </Content>
 
-          <StyledImage src={aboutUs.image} width="500px" height={400} alt="flamingo restaurant interiour" priority />
+          <StyledImage priority={true} src={aboutUs.image} width="500px" height={400} alt="flamingo restaurant interiour" />
         </Wrapper>
       </Container>
     </div>

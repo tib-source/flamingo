@@ -4,7 +4,6 @@ import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
 import { InfoType } from "../types";
-import Image from 'next/image'
 interface styleType {
   reverse?: boolean;
   font?: string;
@@ -39,16 +38,14 @@ const InfoImage = styled.div<styleType>`
   @media screen and (max-width: 948px) {
     order: 2;
   }
-  img {
+`;
+
+const StyledImage = styled.img`
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 1rem;
     box-shadow: 5px 5px 1px ${Color.orange};
-  }
-`;
-
-const StyledImage = styled(Image)`
 `
 const TextWrapper = styled(flex) <styleType>`
   gap: 1rem;
@@ -70,8 +67,8 @@ const Wrapper = styled(flex) <styleType>`
     flex-direction: column;
   }
 `;
-
-const InfoSection = ({ info }: { info: InfoType }) => {
+const InfoSection = ({ info }: { info: any }) => {
+  console.log(info.image)
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>
@@ -82,9 +79,10 @@ const InfoSection = ({ info }: { info: InfoType }) => {
         >
           <TextWrapper reverse={info.reverse}>
             <h2>{info.title}</h2>
-            {info.paragraphs.map((para, index: number) => {
+            {/* {info.paragraphs.map((para, index: number) => {
               return index <= 5 && <p key={index}>{para}</p>;
-            })}
+            })} */}
+            <p >{info.paragraph}</p>
             {info.button && (
               <Button href={info.buttonPath} $reverse={info.reverse}>
                 {info.buttonLabel}
@@ -93,7 +91,7 @@ const InfoSection = ({ info }: { info: InfoType }) => {
           </TextWrapper>
         </InfoText>
         <InfoImage reverse={info.reverse}>
-          <Image src={info.image} alt={info.alt} />
+          <StyledImage src={info.image} alt={info.alt} />
         </InfoImage>
       </Wrapper>
     </InfoContainer>

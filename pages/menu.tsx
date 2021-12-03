@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Title from "../components/Title/Title";
-import { MenuData } from "../data/Menu";
+// import { MenuData } from "../data/Menu";
 import Image from 'next/image'
 import {
   containerCss,
@@ -12,7 +12,8 @@ import { flex } from "../components/Util/flex";
 import { Color } from "../data/Color";
 import Kitfo from "../public/images/kitfo.jpg";
 import Meta from "../components/Meta";
-
+import { attributes } from "./../content/menu.md";
+import { MenuItem } from "../components/types";
 
 const Container = styled(flex)`
   ${containerCss}
@@ -132,14 +133,18 @@ const Card = styled.div`
     transform: scale(1.02) !important;
   }
 `;
+
+
 const Menu = () => {
+  type MenuList = MenuItem[]
+  const { title, MenuData }: { title: string, MenuData: MenuList } = attributes
+
   const Orignial = MenuData;
-  const [Menu, setMenu] = useState(MenuData);
+  const [Menu, setMenu] = useState<MenuList>(MenuData)
 
   const handleFilter: React.ChangeEventHandler<any> = (event) => {
-    const filterTag = event.target.innerText;
-    console.log(filterTag);
-    const filteredMenu = Orignial.filter((item) =>
+    const filterTag: string = event.target.innerText;
+    const filteredMenu = Orignial.filter((item: MenuItem) =>
       item.tag.includes(filterTag)
     );
 
@@ -156,6 +161,7 @@ const Menu = () => {
       <Container>
         <Wrapper>
           <h4>Meals</h4>
+          {/*  TODO: change this ugle wall of code to an array. name it ... menuFilterList or sth idk */}
           <Filter>
             <button onClick={handleFilter}>All</button>
             <hr />
@@ -178,7 +184,7 @@ const Menu = () => {
             <button onClick={handleFilter}>Appetizer</button>
           </Filter>
           <Food>
-            {Menu.map((food, index) =>
+            {Menu.map((food: MenuItem, index: React.Key) =>
             (
               <Card key={index}
                 data-aos-anchor-placement="top-bottom"
@@ -186,7 +192,7 @@ const Menu = () => {
                 data-aos-duration="500"
               >
                 <div className="bg">
-                  <Image src={Kitfo} alt={food.name} />
+                  <Image priority={true} src={Kitfo} alt={food.name} />
                 </div>
                 <div className="info">
                   <h5 className="name">{food.name}</h5>
