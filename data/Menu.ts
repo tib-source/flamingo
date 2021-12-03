@@ -1,4 +1,6 @@
-export const MenuData = [
+import { MenuItem } from "../components/types";
+
+export const MenuData: MenuItem[] = [
   {
     name: "Fish Fingers",
     description: "",

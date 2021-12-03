@@ -8,7 +8,7 @@ collections:
     label: "Pages"
     delete: false
     files:
-    - label: 'Flamingo Restaurant'
+    - label: 'Home Page'
       name: "infoData"
       file: "content/home.md"
       widget: list
@@ -23,23 +23,23 @@ collections:
         - { label: "Image", name: "image", widget: "image"}
         - { label: "Alt", name: "alt", widget: "string"}
         - { label: "Font", name: "font", widget: "color", allowInput: true}
-    - label: "About"
+    - label: "About Page"
       name: "About Us"
       file: "content/about.md"
       fields: 
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Paragraph", name: "paragraph", widget: "string"}
         - { label: "Image", name: "image", widget: "image"}   
-    - label: "Hero"
-      name: "Hero Page"
+    - label: "Hero "
+      name: "Hero "
       file: "content/hero.md"
       fields: 
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Paragraph", name: "paragraph", widget: "text"}
         - { label: "ButtonLabel", name: "buttonLabel", widget: "list"}
         - { label: "ButtonPath", name: "buttonPath", widget: "list"}
-    - label: "Menu"
-      name: "Menu Page"
+    - label: "Menu Page"
+      name: "Menu"
       file: "content/menu.md"
       fields: 
         - { label: "Name", name: "name", widget: "string"}

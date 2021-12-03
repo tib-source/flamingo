@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Title from "../components/Title/Title";
-import { MenuData } from "../data/Menu";
 import Image from 'next/image'
 import {
   containerCss,
@@ -14,6 +13,7 @@ import Kitfo from "../public/images/kitfo.jpg";
 import Meta from "../components/Meta";
 // import { attributes } from "./../content/menu.md";
 import { MenuItem } from "../components/types";
+import { MenuData } from "../data/Menu";
 
 const Container = styled(flex)`
   ${containerCss}

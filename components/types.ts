@@ -29,7 +29,7 @@ export interface InfoType {
 export interface MenuItem {
   name: string,
   description: string,
-  price: number,
+  price: number | string,
   tag: string[],
   image: string
 }
