@@ -9,7 +9,7 @@ collections:
     delete: false
     files:
     - label: "Home"
-      name: "home"
+      name: "Home"
       file: "content/home.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
@@ -32,10 +32,10 @@ collections:
     - label: "Menu Page"
       name: "Menu"
       file: "content/menu.md"
-      widget: "list"
       fields:
         - { label: "Title", name: "title", widget: "string"}
-        - label: "Menu Items"
+        - { label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu Items"   
           name: "MenuData"
           widget: list
           fields: 
