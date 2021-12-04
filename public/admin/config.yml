@@ -43,4 +43,4 @@ collections:
             - { label: "Description", name: "description", widget: "string", default: ""}
             - { label: "Price", name: "price", widget: "number", step: 0.01}
             - { label: "Tag", name: "tag", widget: "list"}
-            - { label: "Image", name: "image", widget: "image"}
+            - { label: "Image", name: "image", widget: "image", default: "/images/kitfo.jpg"}
