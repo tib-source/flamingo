@@ -20,12 +20,12 @@ MenuData:
     description: ""
     price: 6.50
     tag: ['Kids']
-     
+    image: "/images/kitfo.jpg" 
   - name: Kitfo
     description: ""
     price: 10
     tag: ['50-50 Choice']
-     
+    image: "/images/kitfo.jpg" 
   - name: Dulet
     description: Well chopped lamb stomach, liver, red meat, cooked with Ethiopian spices.
     price: 10
