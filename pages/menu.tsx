@@ -156,7 +156,7 @@ const Menu = () => {
   };
   return (
     <div>
-      <Meta title="Out Menu | Flamingo Restaurant" />
+      <Meta title="Our Menu | Flamingo Restaurant" />
       <Title title="Our Menu" />
       <Container>
         <Wrapper>
