@@ -69,16 +69,16 @@ const PlaceHolder = styled(flex)`
     a {
       cursor: pointer;
       all: unset;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.25rem;
+      margin-left: 0.3rem;
       cursor: pointer;
       padding: 0.5rem 1rem 0.5rem 0rem;
       transition: 400ms ease-in;
       color: ${Color.gray};
       &:hover {
         color: ${Color.red};
-        background: ${Color.red}
       }
     }
   }
@@ -139,7 +139,7 @@ const FormDiv = styled(flex)`
     padding: 0.5rem 1rem 0.5rem 0rem;
     transition: 400ms ease-in;
     &:hover {
-      color: red;
+      color: ${Color.red};
     }
   }
 `;
@@ -148,6 +148,7 @@ const Group = styled(flex)`
   gap: 1rem;
 `;
 const Email = styled.div`
+
   align-self: flex-start;
   display: flex;
   flex-flow: column;
@@ -229,7 +230,7 @@ const Contact = () => {
           <Group className="second">
             <h3>Find US</h3>
             <p>Address: 31 Goldhawk Rd, Sheperd’s bush, W12 8QQ, London. </p>
-            <p>Phone No: 020 8740 7865 </p>
+            <p>Phone No: <a href='tel:02087407865'>020 8740 7865</a> </p>
             <p>
               Email:
               <a href="mailto:admin@flamingo-restaurant.com">

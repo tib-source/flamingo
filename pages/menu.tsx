@@ -192,7 +192,8 @@ const Menu = () => {
                 data-aos-duration="500"
               >
                 <div className="bg">
-                  <Image priority={true} src={food.image} alt={food.name} />
+                  { /* eslint-disable-next-line @next/next/no-img-element  */}
+                  <img src={food.image} alt={food.name} />
                 </div>
                 <div className="info">
                   <h5 className="name">{food.name}</h5>
