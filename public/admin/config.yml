@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: git-gateway 
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "public/images"
 public_folder: "/images"
@@ -44,7 +44,7 @@ collections:
             - { label: "Price", name: "price", widget: "number", step: 0.01}
             - label: "Tag"
               name: "tag"
-              widget: "list"
-              fields:
-                - { label: 'Name', name: 'name', widget: 'string'}
+              widget: "select"
+              multiple: true
+              options: ["Kids", "Chef's Special", Rice, Fish, Vegeterian, Chicken, Lamb, Side, Appetizer]
             - { label: "Image", name: "image", widget: "image", default: "/images/kitfo.jpg"}
