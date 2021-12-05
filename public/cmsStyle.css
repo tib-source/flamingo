@@ -10,19 +10,62 @@ body {
 }
 
 
-.food-container{ 
-    background-color: red;
-    display: flex;
+.FoodList{ 
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    place-items: center;
 }
 
-.food-box{ 
-    width: 250px;
-    height: 250px;
-    background-color: blue;
+.Food-Card{ 
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 1em;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 3px 3px 1px #fb8500;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
 }
+
+.bg {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1em;
+  }
+
+
+.info {
+    position: relative;
+    background: #1b1a1771;
+    color: #fefae0;
+    z-index: 2;
+    padding: 0.5rem 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+
+
+.name {
+    font-size: 1.25rem;
+}
+
+.Food-Box:hover {
+    opacity: 0.8 !important;
+    transform: scale(1.02) !important;
+}
+
+

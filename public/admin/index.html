@@ -15,17 +15,21 @@
     const MenuPreview = createClass({
       render: function () {
         const FoodList = this.props.widgetsFor('MenuData')
-        return h('div', {},
-          h("h1", {}, "Menu"),
+        return h('div', { className: 'FoodList' },
           FoodList.map((Food, index) => {
             const foodName = Food.getIn(['data', 'name'])
             const foodDescription = Food.getIn(['data', 'description'])
             const foodTags = Food.getIn(['data', 'tag'])
             const foodImage = Food.getIn(['data', 'image'])
             const foodPrice = Food.getIn(['data', 'price'])
-            return h('div', { key: index, className: 'food-container' },
-              h('div', { className: 'food-box' },
-                h('strong', {}, foodName || 0)
+            return h('div', { key: index, className: 'Food-Card' },
+              h('div', { className: 'bg' },
+                h('img', { src: foodImage, alt: foodName })
+              ),
+              h('div', { className: "info" },
+                h('h5', { className: 'name' }, foodName),
+                h('small', {}, foodDescription),
+                h('h5', { className: "price" }, `£${foodPrice}`)
               )
             )
           })
