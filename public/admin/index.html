@@ -17,17 +17,22 @@
         const FoodList = this.props.widgetsFor('MenuData')
         return h('div', {},
           h("h1", {}, "Menu"),
-          FoodList.map((author, index) => {
-            console.log(author)
-            return h('div', { key: index },
-              h('hr', {}),
-              h('strong', {}, "Food")
+          FoodList.map((Food, index) => {
+            const foodName = Food.getIn(['data', 'name'])
+            const foodDescription = Food.getIn(['data', 'description'])
+            const foodTags = Food.getIn(['data', 'tag'])
+            const foodImage = Food.getIn(['data', 'image'])
+            const foodPrice = Food.getIn(['data', 'price'])
+            return h('div', { key: index, className: 'food-container' },
+              h('div', { className: 'food-box' },
+                h('strong', {}, foodName || 0)
+              )
             )
           })
         )
       }
     })
-
+    CMS.registerPreviewStyle('/cmsStyle.css')
     CMS.registerPreviewTemplate("Menu", MenuPreview);
   </script>
 </body>

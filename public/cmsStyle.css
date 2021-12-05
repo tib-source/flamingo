@@ -8,3 +8,21 @@ body {
 body {
   padding: 20px;
 }
+
+
+.food-container{ 
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.food-box{ 
+    width: 250px;
+    height: 250px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
