@@ -68,7 +68,6 @@ const Wrapper = styled(flex) <styleType>`
   }
 `;
 const InfoSection = ({ info }: { info: any }) => {
-  console.log(info.image)
   return (
     <InfoContainer font={info.font} color={info.color}>
       <Wrapper>

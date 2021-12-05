@@ -13,7 +13,6 @@ import { reviewItem } from "../components/types";
 
 const Home: NextPage = () => {
   let { infoData }: { infoData: InfoType[] } = homeData;
-  console.log(reviews)
   return (
     <>
       <Head>
