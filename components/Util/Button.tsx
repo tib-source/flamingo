@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Color } from "../../data/Color";
 
-type ButtonType = { 
+type ButtonType = {
   $reverse?: boolean
-  $big? : boolean
+  $big?: boolean
 }
 
 export const Button = styled.a<ButtonType>`
@@ -28,10 +28,10 @@ export const Button = styled.a<ButtonType>`
   &:hover {
     /* transform: translateY(-3px); */
     color: ${({ $reverse }) =>
-      $reverse === false || $reverse === undefined
-        ? Color.orange
-        : Color.trueWhite};
+    $reverse === false || $reverse === undefined
+      ? Color.orange
+      : Color.trueWhite};
     background-color: ${({ $reverse }) =>
-      $reverse === false || $reverse === undefined ? Color.black : Color.green};
+    $reverse === false || $reverse === undefined ? Color.black : Color.red};
   }
 `;
