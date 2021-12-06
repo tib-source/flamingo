@@ -1,4 +1,4 @@
-import React, {useState, useEffect, RefObject, Suspense, lazy} from 'react'
+import React, { useState, useEffect, RefObject, Suspense, lazy } from 'react'
 import Header from './Header/Header'
 import Meta from './Meta'
 import AOS from "aos";
@@ -8,11 +8,12 @@ import Footer from "./Footer/Footer";
 
 
 
-const Layout:React.FC = ({children}) => { 
+const Layout: React.FC = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = (element: RefObject<HTMLDivElement>) => {
     if (isOpen && element.current !== null) {
+      console.log(element)
       element.current.classList.add("fadeout");
       setTimeout(() => {
         element.current!.classList.add("fadeout");
@@ -40,23 +41,23 @@ const Layout:React.FC = ({children}) => {
           </div>
         }
       > */}
-      <Meta /> 
+      <Meta />
       <Header
+        toggle={toggle}
+        HeaderButtonData={HeaderButtonData}
+        HeaderData={HeaderData}
+      />
+      {isOpen && (
+        <Dropdown
           toggle={toggle}
           HeaderButtonData={HeaderButtonData}
           HeaderData={HeaderData}
         />
-        {isOpen && (
-          <Dropdown
-            toggle={toggle}
-            HeaderButtonData={HeaderButtonData}
-            HeaderData={HeaderData}
-          />
-        )}
+      )}
       {children}
       <Footer HeaderData={HeaderData} />
       {/* </Suspense> */}
-    </div> 
+    </div>
   )
 }
 

@@ -102,7 +102,7 @@ const Dropdown = (props: {
   const Menu = useRef<HTMLDivElement>(null);
   return (
     <DropdownWrapper ref={Menu}>
-      <Icon onClick={props.toggle}>
+      <Icon onClick={() => props.toggle(Menu)}>
         <FaTimes />
       </Icon>
       <DropdownMenu>
