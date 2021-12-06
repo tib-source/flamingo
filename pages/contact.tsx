@@ -26,7 +26,7 @@ const heightCss = css`
 // `;
 
 const wrapperCss = css`
-  width: min(100%, 1000px);
+  width: min(90vw, 1000px);
   margin: 5rem 0;
   @media screen and (max-width: 948px) {
     flex-direction: column-reverse;

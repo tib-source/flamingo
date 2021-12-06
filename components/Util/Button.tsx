@@ -30,7 +30,7 @@ export const Button = styled.a<ButtonType>`
     color: ${({ $reverse }) =>
     $reverse === false || $reverse === undefined
       ? Color.orange
-      : Color.trueWhite};
+      : Color.black};
     background-color: ${({ $reverse }) =>
     $reverse === false || $reverse === undefined ? Color.black : Color.red};
   }
