@@ -1,14 +1,16 @@
 ---
 title: Flamingo Restaurant
 date: 2019-03-17T19:31:20.591Z
-description: "Experience authentic ethiopian quisine"
+body: "Experience authentic ethiopian quisine"
 button: true
+background: /images/background-min.avif
 buttonList: 
   - buttonName: Menu
     buttonPath: /menu
+    animation: fade-rigt
   - buttonName: Book A Table
     buttonPath: /book 
-background: /images/background-min.avif
+    animation: fade-left
 infoData:
   - buttonLabel: Read More
     reverse: false

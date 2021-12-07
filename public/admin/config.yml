@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway 
+  name: test-repo
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "public/images"
 public_folder: "/images"
@@ -16,24 +16,44 @@ collections:
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown"}
         - { label: "Button", name: "button", widget: boolean }
+        - { label: 'Background Picture', name: background, widget: image}
         - label: "Button List"
           name: buttonList
           widget: list
           fields: 
             - { label: 'Button Name', name: buttonName, widget: string}
             - { label: 'Button Path', name: buttonPath, widget: string}
-            - { label: 'Background Picture', name: background, widget: image}
-        - label: 'Flamingo Restaurant'
+            - { label: 'Animation', name: animation, widget: string}
+        - label: 'Information Section'
           name: "infoData"
           widget: list
           fields:
             - { label: "Title", name: "title", widget: "string"}
             - { label: "Paragraph", name: "paragraph", widget: "text"}
             - { label: "Button", name: "button", widget: "boolean"}
-            - { label: "ButtonLabel", name: "buttonLabel", widget: "string"} - { label: "ButtonPath", name: "buttonPath", widget: "string"} - { label: "Reverse", name: "reverse", widget: "boolean"} - { label: "Color", name: "color", widget: "color", allowInput: true} - { label: "Image", name: "image", widget: "image"} - { label: "Alt", name: "alt", widget: "string"} - { label: "Font", name: "font", widget: "color", allowInput: true}
+            - { label: "ButtonLabel", name: "buttonLabel", widget: "string"} 
+            - { label: "ButtonPath", name: "buttonPath", widget: "string"} 
+            - { label: "Reverse", name: "reverse", widget: "boolean"} 
+            - { label: "Color", name: "color", widget: "color", allowInput: true} 
+            - { label: "Image", name: "image", widget: "image"} 
+            - { label: "Alt", name: "alt", widget: "string"} 
+            - { label: "Font", name: "font", widget: "color", allowInput: true}
     - label: "Menu Page"
       name: "Menu"
       file: "content/menu.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
-        - { label: "Body", name: "body", widget: "markdown"} - label: "Menu Items"   name: "MenuData" widget: list fields: - { label: "Name", name: "name", widget: "string"} - { label: "Description", name: "description", widget: "string", required: false} - { label: "Price", name: "price", widget: "number", step: 0.01} - label: "Tag" name: "tag" widget: "select" multiple: true options: ["Kids", "Chef's Special", Rice, Fish, Vegeterian, Chicken, Lamb, Side, Appetizer] - { label: "Image", name: "image", widget: "image", default: "/images/kitfo.jpg"}
+        - { label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu Items"
+          name: "MenuData" 
+          widget: list 
+          fields: 
+            - { label: "Name", name: "name", widget: "string"} 
+            - { label: "Description", name: "description", widget: "string", required: false} 
+            - { label: "Price", name: "price", widget: "number", step: 0.01} 
+            - label: "Tag" 
+              name: "tag" 
+              widget: "select" 
+              multiple: true 
+              options: ["Kids", "Chef's Special", Rice, Fish, Vegeterian, Chicken, Lamb, Side, Appetizer] 
+            - { label: "Image", name: "image", widget: "image", default: "/images/kitfo.jpg"}

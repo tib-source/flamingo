@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Color } from "../../data/Color";
 import { Button } from "../Util/Button";
 import { flex } from "../Util/flex";
+import { attributes as Data } from "../../content/home.md"
+
 const HeroContainer = styled.section`
   width: 100%;
   height: 90vh;
@@ -19,7 +21,7 @@ const BG = styled.div`
   position: absolute;
   top: -10vh;
   left: 0;
-  background: url("../images/background-min.avif") no-repeat center;
+  background: url(${Data.background}) no-repeat center;
   width: 100%;
   height: 100vh;
 
@@ -106,20 +108,28 @@ const Hero = () => {
         <Content>
           <Text>
             <h1 data-aos="fade-out" data-aos-offset="200" ref={title}>
-              Flamingo Restaurant
+              {Data.title}
             </h1>
-            <p>
-              Experience <span>Authentic</span> Ethiopian cuisine
+            <p dangerouslySetInnerHTML={{ __html: Data.body }}>
             </p>
           </Text>
-          <CTAButtons>
-            <Button href="/menu" $big data-aos="fade-right" data-aos-offset="300">
-              Menu
-            </Button>
-            <Button href="/book" $big data-aos="fade-left" data-aos-offset="300">
-              Book A Table
-            </Button>
-          </CTAButtons>
+          {Data.button &&
+            (<CTAButtons>
+              {Data.buttonList.map((buttonData: any, index: React.Key) => {
+                return (
+                  <Button key={index} href={buttonData.buttonPath} $big data-aos={buttonData.animation} data-aos-offset="300">
+                    {buttonData.buttonName}
+                  </Button>
+                )
+              })}
+              {/* <Button href="/menu" $big data-aos="fade-right" data-aos-offset="300">
+                Menu
+              </Button>
+              <Button href="/book" $big data-aos="fade-left" data-aos-offset="300">
+                Book A Table
+              </Button> */}
+            </CTAButtons>)
+          }
         </Content>
       </Wrapper>
     </HeroContainer>
