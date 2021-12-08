@@ -1,6 +1,6 @@
 ---
 title: About Page 
-contact:
+about:
   - title: About Us
   - paragraph: >-
       We were established in 2008 at the heart of London just opposite Westfield. We are positioned at the centre convenance for every kind of transport Bus, Train, Underground and your Car with parking space available at the back of the restaurant with a small fee.",

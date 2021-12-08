@@ -57,3 +57,16 @@ collections:
               multiple: true 
               options: ["Kids", "Chef's Special", Rice, Fish, Vegeterian, Chicken, Lamb, Side, Appetizer] 
             - { label: "Image", name: "image", widget: "image", default: "/images/kitfo.jpg"}
+    - label: "About Page"
+      name: "About"
+      file: "content/about.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - label: "About" 
+          name: "about" 
+          widget: "list"
+          fields: 
+            - { label: Title, name: title, widget: string }
+            - { label: Paragraph, name: paragraph, widget: string}
+            - { label: Image, name: image, widget: image}
+            
