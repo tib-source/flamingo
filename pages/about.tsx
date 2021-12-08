@@ -3,9 +3,10 @@ import Title from "../components/Title/Title";
 import { flex } from "../components/Util/flex";
 import styled from "styled-components";
 import { Color } from "../data/Color";
-import { aboutUs } from "../data/AboutUsData";
+// import { aboutUs } from "../data/AboutUsData";
 import Meta from "../components/Meta";
 import Image from 'next/image'
+import { attributes as aboutUs } from "./../content/about.md"
 
 const Container = styled(flex)`
   flex-flow: column;
@@ -53,9 +54,10 @@ const About = () => {
         <Wrapper>
           <Content>
             <h4>Who we are</h4>
-            {aboutUs.paragraphs.map((elem, index) => (
+            {aboutUs.paragraph}
+            {/* {aboutUs.paragraphs.map((elem, index) => (
               <p key={index}>{elem}</p>
-            ))}
+            ))} */}
           </Content>
 
           <StyledImage priority={true} src={aboutUs.image} width="500px" height={400} alt="flamingo restaurant interiour" />
@@ -66,3 +68,4 @@ const About = () => {
 };
 
 export default About;
+
