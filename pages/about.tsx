@@ -6,7 +6,7 @@ import { Color } from "../data/Color";
 // import { aboutUs } from "../data/AboutUsData";
 import Meta from "../components/Meta";
 import Image from 'next/image'
-import { attributes as aboutUs } from "./../content/about.md"
+import { attributes as aboutData } from "./../content/about.md"
 
 const Container = styled(flex)`
   flex-flow: column;
@@ -24,7 +24,7 @@ const Wrapper = styled(flex)`
   }
 
 `;
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
     flex: 1;
     height: min(450px, 50vh);
     object-fit: cover;
@@ -46,6 +46,9 @@ const Content = styled(flex)`
   }
 `;
 const About = () => {
+  const { about } = aboutData
+  const aboutUs = about[0]
+  console.log(about)
   return (
     <div>
       <Meta title="About Us | Flamingo Restaurant" />
@@ -60,7 +63,7 @@ const About = () => {
             ))} */}
           </Content>
 
-          <StyledImage priority={true} src={aboutUs.image} width="500px" height={400} alt="flamingo restaurant interiour" />
+          <StyledImage src={aboutUs.image} alt="flamingo restaurant interiour" />
         </Wrapper>
       </Container>
     </div>
