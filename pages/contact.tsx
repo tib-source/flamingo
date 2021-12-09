@@ -182,30 +182,30 @@ const Contact = () => {
         </PlaceHolder>
         <FormDiv className="form">
           <h3> Contact Flamingo </h3>
-          <form>
+          <form name='Contact' data-netlify="true" method="POST">
             <Group>
               <label>
                 FIRST NAME
-                <input type="text" placeholder="Enter your first name" />
+                <input type="text" name="firstname" placeholder="Enter your first name" />
               </label>
               <label>
-                Last NAME
-                <input type="text" placeholder="Enter your last name" />
+                LAST NAME
+                <input type="text" name="lastname" placeholder="Enter your last name" />
               </label>
             </Group>
             <Group>
               <label>
                 Email
-                <input type="email" placeholder="Enter your email" />
+                <input type="email" name="email" placeholder="Enter your email" />
               </label>
               <label>
                 Phone Number
-                <input type="tel" placeholder="phone number" />
+                <input type="tel" name="phonenumber" placeholder="phone number" />
               </label>
             </Group>
             <label>
               Message
-              <input type="text" placeholder="Enter your message" />
+              <input name="message" type="text" placeholder="Enter your message" />
             </label>
             <button>
               Submit <BsArrowRight />
