@@ -207,7 +207,7 @@ const Contact = () => {
               Message
               <input name="message" type="text" placeholder="Enter your message" />
             </label>
-            <button>
+            <button type="submit" >
               Submit <BsArrowRight />
             </button>
           </form>
