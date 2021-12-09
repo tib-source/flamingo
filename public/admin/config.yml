@@ -66,5 +66,5 @@ collections:
           name: "about" 
           fields: 
             - { label: Title, name: title, widget: string }
-            - { label: Paragraph, name: paragraph, widget: string}
+            - { label: Paragraph, name: paragraph, widget: markdown}
             - { label: Image, name: image, widget: image}
