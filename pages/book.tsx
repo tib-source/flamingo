@@ -150,21 +150,22 @@ const BookTable = () => {
         </PlaceHolder>
         <FormDiv className="form">
           <h3> Book </h3>
-          <form>
+          <form name="book-table" data-netlify="true">
             <Group>
               <label>
                 FIRST NAME
-                <input type="text" placeholder="Enter your first name" />
+                <input name="firstname" type="text" placeholder="Enter your first name" />
               </label>
               <label>
-                Last NAME
-                <input type="text" placeholder="Enter your last name" />
+                LAST NAME
+                <input name="lastname" type="text" placeholder="Enter your last name" />
               </label>
             </Group>
             <Group>
               <label>
                 Party Size
                 <input
+                  name="party-size"
                   type="number"
                   min={1}
                   max={10}
@@ -173,12 +174,13 @@ const BookTable = () => {
               </label>
               <label>
                 Date
-                <input type="datetime-local" placeholder="phone number" />
+                <input name="date" type="datetime-local" placeholder="phone number" />
               </label>
             </Group>
             <label>
               Message (Optional)
               <input
+                name="message"
                 type="text"
                 style={{ width: "auto" }}
                 placeholder="Enter your message"
