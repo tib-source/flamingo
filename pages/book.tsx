@@ -150,7 +150,8 @@ const BookTable = () => {
         </PlaceHolder>
         <FormDiv className="form">
           <h3> Book </h3>
-          <form method="POST" name="book-table" data-netlify="true">
+          <form method="POST" name="Table Bookings" data-netlify="true">
+            <input type="hidden" name="form-name" value="Table Bookings" />
             <Group>
               <label>
                 FIRST NAME

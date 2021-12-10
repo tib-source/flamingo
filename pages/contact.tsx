@@ -183,6 +183,7 @@ const Contact = () => {
         <FormDiv className="form">
           <h3> Contact Flamingo </h3>
           <form name='Contact' data-netlify="true" method="POST">
+            <input type="hidden" name="form-name" value="Contact" />
             <Group>
               <label>
                 FIRST NAME
