@@ -187,11 +187,11 @@ const Contact = () => {
             <Group>
               <label>
                 FIRST NAME
-                <input type="text" name="firstname" placeholder="Enter your first name" />
+                <input type="text" name="first name" placeholder="Enter your first name" />
               </label>
               <label>
                 LAST NAME
-                <input type="text" name="lastname" placeholder="Enter your last name" />
+                <input type="text" name="last name" placeholder="Enter your last name" />
               </label>
             </Group>
             <Group>
@@ -201,7 +201,7 @@ const Contact = () => {
               </label>
               <label>
                 Phone Number
-                <input type="tel" name="phonenumber" placeholder="phone number" />
+                <input type="tel" name="phone number" placeholder="phone number" />
               </label>
             </Group>
             <label>

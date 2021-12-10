@@ -155,11 +155,11 @@ const BookTable = () => {
             <Group>
               <label>
                 FIRST NAME
-                <input name="firstname" type="text" placeholder="Enter your first name" />
+                <input name="first name" type="text" placeholder="Enter your first name" />
               </label>
               <label>
                 LAST NAME
-                <input name="lastname" type="text" placeholder="Enter your last name" />
+                <input name="last name" type="text" placeholder="Enter your last name" />
               </label>
             </Group>
             <Group>
