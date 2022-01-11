@@ -56,7 +56,9 @@ const TextWrapper = styled(flex) <styleType>`
 
   @media screen and (max-width: 948px) {
     align-items: flex-start;
-    padding: 0 1.5rem;
+    
+  text-align: left;
+
   }
 `;
 
