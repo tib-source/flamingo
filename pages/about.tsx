@@ -16,7 +16,7 @@ const Container = styled(flex)`
 const Wrapper = styled(flex)`
   width: min(80%, 1000px);
   margin: 5rem 0;
-  @media screen and (max-width: 948px) {
+  @media screen and (max-width: 949px) {
     flex-direction: column;
   }
   h4 {
@@ -28,6 +28,10 @@ const StyledImage = styled.img`
     flex: 1;
     height: min(450px, 50vh);
     object-fit: cover;
+    width: 450px;
+    @media screen and (max-width: 949px) { 
+      width: 80vw;
+    }
   `
 const Content = styled(flex)`
   align-items: flex-start;
@@ -40,7 +44,7 @@ const Content = styled(flex)`
   background: ${Color.white};
   height: 100%;
 
-  @media screen and (max-width: 948px) {
+  @media screen and (max-width: 949px) {
     padding: 0;
     padding-bottom: 2rem;
   }
