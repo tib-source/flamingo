@@ -7,7 +7,7 @@ background: /images/background-min.avif
 buttonList: 
   - buttonName: Menu
     buttonPath: /menu
-    animation: fade-rigt
+    animation: fade-right
   - buttonName: Book A Table
     buttonPath: /book 
     animation: fade-left
